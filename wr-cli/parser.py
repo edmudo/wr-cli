@@ -22,13 +22,14 @@ class Parser:
             array of separated string tokens
         """
         arr_user_string = user_input.split()
-
+        count = 0
         stack = []
         final_arr_user_string = []
         for token in arr_user_string:
             # keep the original token for comparisons, modified token for
             # inserting into stack
             modified_token = token.replace("\"", "")
+
 
             if len(stack) != 0 and "\"" in token:
                 stack.append(modified_token)
@@ -37,12 +38,24 @@ class Parser:
                 final_arr_user_string.append(final_token)
 
                 stack.clear()
+
+            elif len(stack) != 0 or ("\'" in token and token[1] != "\'"):
+                modified_token = token.replace("\'", "")
+                count +=1
+                if (count > 2):
+                    stack.append(modified_token)
+                else:
+                    final_arr_user_string.append(modified_token)
+
+
             elif len(stack) != 0 or ("\"" in token and token[-1] != "\""):
                 stack.append(modified_token)
+
             else:
                 final_arr_user_string.append(modified_token)
 
         return final_arr_user_string
+
 
     def parse_input(self, user_input):
         """
@@ -64,7 +77,7 @@ class Parser:
             return ValueError(ParserError.EMPTY_STRING)
 
         arr_user_string = self._separate_tokens(user_input)
-        if len(arr_user_string) % 2 == 0:
+        if len(arr_user_string) % 2 == 0 :
             return ValueError(ParserError.KEY_VALUE_PAIR)
         
         keyword = arr_user_string.pop(0)
@@ -76,11 +89,14 @@ class Parser:
 
 def test():
     parser = Parser()
-    print(parser.parse_input('review city "Burlington"'))
+    print(parser.parse_input("review city 'Burlington'"))
     print(parser.parse_input('review city "Las Vegas"'))
-    print(parser.parse_input(' review city Burlington '))
-    print(parser.parse_input('review city'))
-    print(parser.parse_input(''))
+    print(parser.parse_input('review city "Burlington"'))
+    print(parser.parse_input(" review city 'Burlington' 'Las Vegas' 'London' "))
+    print(parser.parse_input('review city "Burlington" "Las Vegas"'))
+
+    # print(parser.parse_input('review city'))
+    # print(parser.parse_input(''))
 
 
 if __name__ == "__main__":
