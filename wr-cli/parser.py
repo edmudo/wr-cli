@@ -22,31 +22,31 @@ class Parser:
             array of separated string tokens
         """
         arr_user_string = user_input.split()
-        count = 0
+        wrap_character= ""
         stack = []
         final_arr_user_string = []
         for token in arr_user_string:
             # keep the original token for comparisons, modified token for
             # inserting into stack
-            modified_token = token.replace("\"", "")
+            modified_token = token.replace("\"", "").replace("\'", "")
 
-
-            if len(stack) != 0 and "\"" in token:
+            if len(stack) != 0 and "\"" or "\'" in token:
                 stack.append(modified_token)
-
                 final_token = " ".join(stack)
                 final_arr_user_string.append(final_token)
-
                 stack.clear()
 
             elif len(stack) != 0 or ("\'" in token and token[1] != "\'"):
-                modified_token = token.replace("\'", "")
-                count +=1
-                if (count > 2):
+
+                if ("\'" in token ):
+                    # wrap_character = "'"
+                    stack.append(modified_token)
+
+                elif ("\"" in token and token[1] != "\""):
+                    # wrap_character = "\""
                     stack.append(modified_token)
                 else:
                     final_arr_user_string.append(modified_token)
-
 
             elif len(stack) != 0 or ("\"" in token and token[-1] != "\""):
                 stack.append(modified_token)
