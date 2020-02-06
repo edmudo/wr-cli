@@ -4,6 +4,7 @@ from enum import Enum
 class ParserError(Enum):
     EMPTY_STRING = 0
     KEY_VALUE_PAIR = 1
+    INCOMPLETE_WRAP = 2
 
 
 class Parser:
@@ -35,8 +36,11 @@ class Parser:
             contain_start_wrap = any([token[0] == character
                                       for character in valid_wrap_characters])
 
-            contain_close_wrap = any([token[-1] == token[0] or token[-1] == wrap_character
-                                      for character in valid_wrap_characters])
+            if contain_start_wrap:
+                contain_close_wrap = any([token[-1] == token[0] or token[-1] == wrap_character
+                                          for character in valid_wrap_characters])
+            else:
+                contain_close_wrap = False
 
             if len(stack) != 0 and contain_close_wrap:
                 stack.append(modified_token)
@@ -49,6 +53,9 @@ class Parser:
                 stack.append(modified_token)
             else:
                 final_arr_user_string.append(modified_token)
+
+        if len(stack) != 0:
+            raise ValueError(ParserError.INCOMPLETE_WRAP)
 
         return final_arr_user_string
 
@@ -71,7 +78,11 @@ class Parser:
         if len(user_input) == 0:
             return ValueError(ParserError.EMPTY_STRING)
 
-        arr_user_string = self._separate_tokens(user_input)
+        try:
+            arr_user_string = self._separate_tokens(user_input)
+        except ValueError as e:
+            return e
+
         if len(arr_user_string) % 2 == 0 :
             return ValueError(ParserError.KEY_VALUE_PAIR)
         
