@@ -21,41 +21,36 @@ class Parser:
         list
             array of separated string tokens
         """
+        valid_wrap_characters = "'\""
         arr_user_string = user_input.split()
-        wrap_character= ""
+
         stack = []
         final_arr_user_string = []
+        wrap_character= ""
         for token in arr_user_string:
             # keep the original token for comparisons, modified token for
             # inserting into stack
-            modified_token = token.replace("\"", "").replace("\'", "")
+            modified_token = token.strip("\"'")
 
-            if len(stack) != 0 and "\"" or "\'" in token:
+            contain_start_wrap = any([token[0] == character
+                                      for character in valid_wrap_characters])
+
+            contain_close_wrap = any([token[-1] == token[0] or token[-1] == wrap_character
+                                      for character in valid_wrap_characters])
+
+            if len(stack) != 0 and contain_close_wrap:
                 stack.append(modified_token)
                 final_token = " ".join(stack)
                 final_arr_user_string.append(final_token)
                 stack.clear()
-
-            elif len(stack) != 0 or ("\'" in token and token[1] != "\'"):
-
-                if ("\'" in token ):
-                    # wrap_character = "'"
-                    stack.append(modified_token)
-
-                elif ("\"" in token and token[1] != "\""):
-                    # wrap_character = "\""
-                    stack.append(modified_token)
-                else:
-                    final_arr_user_string.append(modified_token)
-
-            elif len(stack) != 0 or ("\"" in token and token[-1] != "\""):
+            elif len(stack) != 0 or (contain_start_wrap and not contain_close_wrap):
+                if contain_start_wrap:
+                    wrap_character = token[0]
                 stack.append(modified_token)
-
             else:
                 final_arr_user_string.append(modified_token)
 
         return final_arr_user_string
-
 
     def parse_input(self, user_input):
         """
