@@ -106,15 +106,14 @@ class Parser:
 
 
 def test():
-    parser = Parser()
-    print(parser.parse_input("review city 'Burlington'"))
-    print(parser.parse_input('review city "Las Vegas"'))
-    print(parser.parse_input('review city "Burlington"'))
-    print(parser.parse_input(" review city 'Burlington' 'Las Vegas' 'London' "))
-    print(parser.parse_input('review city "Burlington" "Las Vegas"'))
-
-    # print(parser.parse_input('review city'))
-    # print(parser.parse_input(''))
+    print(parser.parse_input(""))
+    print(parser.parse_input("review province"))
+    print(parser.parse_input("review province 'Burlington'"))
+    print(parser.parse_input('review province "Burlington"'))
+    print(parser.parse_input('review province \'Burlington"'))
+    print(parser.parse_input("review city 'Burlington' title \"It's James'\""))
+    print(parser.parse_input(" review title \"Martha's Best Wine\" province 'Las Vegas' reviewer 'Mike' "))
+    print(parser.parse_input('review province "Burlington\' "VT"'))
 
 
 if __name__ == "__main__":
