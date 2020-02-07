@@ -8,6 +8,18 @@ class ParserError(Enum):
 
 
 class Parser:
+    def strip_ends(self, s, chars):
+        match_start = any([c == s[0] for c in chars])
+        match_end = any([c == s[-1] for c in chars])
+
+        if match_start:
+            s = s[1:]
+
+        if match_end:
+            s = s[:-1]
+
+        return s
+
     def _separate_tokens(self, user_input):
         """
         Helper to separate parts of the string according to some rules.
@@ -31,7 +43,7 @@ class Parser:
         for token in arr_user_string:
             # keep the original token for comparisons, modified token for
             # inserting into stack
-            modified_token = token.strip("\"'")
+            modified_token = self.strip_ends(token, "\"'")
 
             contain_start_wrap = any([token[0] == character
                                       for character in valid_wrap_characters])
