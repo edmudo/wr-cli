@@ -67,7 +67,7 @@ class Parser:
         user_input = user_input.strip()
 
         if len(user_input) == 0:
-            return ValueError(ParserError.EMPTY_STRING)
+            raise ValueError(ParserError.EMPTY_STRING)
 
         try:
             arr_user_string = self._separate_tokens(user_input)
@@ -75,7 +75,7 @@ class Parser:
             return e
 
         if len(arr_user_string) % 2 == 0 :
-            return ValueError(ParserError.KEY_VALUE_PAIR)
+            raise ValueError(ParserError.KEY_VALUE_PAIR)
         
         keyword = arr_user_string.pop(0)
         keywords = dict(zip(arr_user_string[::2], arr_user_string[1::2]))
