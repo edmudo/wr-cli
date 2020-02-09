@@ -8,6 +8,10 @@ class ParserError(Enum):
 
 
 class Parser:
+    def __init__(self, wrap_chars='\'"', separator_chars=' '):
+        self.wrap_chars = wrap_chars
+        self.separator_chars = separator_chars
+
     def _separate_tokens(self, user_input):
         """
         Helper to separate parts of the string according to some rules.
@@ -22,22 +26,19 @@ class Parser:
         list
             array of separated string tokens
         """
-        VALID_WRAP_CHARS = '\'"'
-        VALID_SEPARATOR_CHARS = ' '
-
         separated_string = []
 
         stack = []
         state = None
         for token in user_input + ' ':
-            if token in VALID_WRAP_CHARS and state is None:
+            if token in self.wrap_chars and state is None:
                 state = token
                 continue
             elif token == state:
                 state = None
                 continue
 
-            if (token in VALID_SEPARATOR_CHARS and state is None):
+            if (token in self.separator_chars and state is None):
                 string = "".join(stack)
                 separated_string.append(string)
                 stack.clear()
