@@ -4,9 +4,14 @@ from enum import Enum
 class ParserError(Enum):
     EMPTY_STRING = 0
     KEY_VALUE_PAIR = 1
+    INCOMPLETE_WRAP = 2
 
 
 class Parser:
+    def __init__(self, wrap_chars='\'"', separator_chars=' '):
+        self.wrap_chars = wrap_chars
+        self.separator_chars = separator_chars
+
     def _separate_tokens(self, user_input):
         """
         Helper to separate parts of the string according to some rules.
@@ -21,28 +26,29 @@ class Parser:
         list
             array of separated string tokens
         """
-        arr_user_string = user_input.split()
+        separated_string = []
 
         stack = []
-        final_arr_user_string = []
-        for token in arr_user_string:
-            # keep the original token for comparisons, modified token for
-            # inserting into stack
-            modified_token = token.replace("\"", "")
+        state = None
+        for token in user_input + ' ':
+            if token in self.wrap_chars and state is None:
+                state = token
+                continue
+            elif token == state:
+                state = None
+                continue
 
-            if len(stack) != 0 and "\"" in token:
-                stack.append(modified_token)
-
-                final_token = " ".join(stack)
-                final_arr_user_string.append(final_token)
-
+            if token in self.separator_chars and state is None:
+                string = "".join(stack)
+                separated_string.append(string)
                 stack.clear()
-            elif len(stack) != 0 or ("\"" in token and token[-1] != "\""):
-                stack.append(modified_token)
             else:
-                final_arr_user_string.append(modified_token)
+                stack.append(token)
 
-        return final_arr_user_string
+        if state is not None:
+            raise ValueError(ParserError.INCOMPLETE_WRAP)
+
+        return separated_string
 
     def parse_input(self, user_input):
         """
@@ -58,13 +64,17 @@ class Parser:
         dict
             key-value pairs from the user input string
         """
-        user_input = user_input.rstrip()
+        user_input = user_input.strip()
 
         if len(user_input) == 0:
             return ValueError(ParserError.EMPTY_STRING)
 
-        arr_user_string = self._separate_tokens(user_input)
-        if len(arr_user_string) % 2 == 0:
+        try:
+            arr_user_string = self._separate_tokens(user_input)
+        except ValueError as e:
+            return e
+
+        if len(arr_user_string) % 2 == 0 :
             return ValueError(ParserError.KEY_VALUE_PAIR)
         
         keyword = arr_user_string.pop(0)
@@ -76,11 +86,14 @@ class Parser:
 
 def test():
     parser = Parser()
-    print(parser.parse_input('review city "Burlington"'))
-    print(parser.parse_input('review city "Las Vegas"'))
-    print(parser.parse_input(' review city Burlington '))
-    print(parser.parse_input('review city'))
-    print(parser.parse_input(''))
+    print(parser.parse_input(""))
+    print(parser.parse_input("review province"))
+    print(parser.parse_input("review province 'Burlington'"))
+    print(parser.parse_input('review province "Burlington"'))
+    print(parser.parse_input('review province \'Burlington"'))
+    print(parser.parse_input("review city 'Burlington' title \"It's James'\""))
+    print(parser.parse_input(" review title \"Martha's Best Wine\" province 'Las Vegas' reviewer 'Mike' "))
+    print(parser.parse_input('review province "Burlington\' "VT"'))
 
 
 if __name__ == "__main__":
