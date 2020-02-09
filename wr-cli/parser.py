@@ -48,7 +48,7 @@ class Parser:
             contain_start_wrap = any([token[0] == character
                                       for character in valid_wrap_characters])
 
-            if contain_start_wrap:
+            if contain_start_wrap or wrap_character:
                 contain_close_wrap = any([token[-1] == token[0] or token[-1] == wrap_character
                                           for character in valid_wrap_characters])
             else:
