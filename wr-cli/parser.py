@@ -8,18 +8,6 @@ class ParserError(Enum):
 
 
 class Parser:
-    def strip_ends(self, s, chars):
-        match_start = any([c == s[0] for c in chars])
-        match_end = any([c == s[-1] for c in chars])
-
-        if match_start:
-            s = s[1:]
-
-        if match_end:
-            s = s[:-1]
-
-        return s
-
     def _separate_tokens(self, user_input):
         """
         Helper to separate parts of the string according to some rules.
@@ -34,42 +22,32 @@ class Parser:
         list
             array of separated string tokens
         """
-        valid_wrap_characters = "'\""
-        arr_user_string = user_input.split()
+        VALID_WRAP_CHARS = '\'"'
+        VALID_SEPARATOR_CHARS = ' '
+
+        separated_string = []
 
         stack = []
-        final_arr_user_string = []
-        wrap_character= ""
-        for token in arr_user_string:
-            # keep the original token for comparisons, modified token for
-            # inserting into stack
-            modified_token = self.strip_ends(token, "\"'")
+        state = None
+        for token in user_input + ' ':
+            if token in VALID_WRAP_CHARS and state is None:
+                state = token
+                continue
+            elif token == state:
+                state = None
+                continue
 
-            contain_start_wrap = any([token[0] == character
-                                      for character in valid_wrap_characters])
-
-            if contain_start_wrap or wrap_character:
-                contain_close_wrap = any([token[-1] == token[0] or token[-1] == wrap_character
-                                          for character in valid_wrap_characters])
-            else:
-                contain_close_wrap = False
-
-            if len(stack) != 0 and contain_close_wrap:
-                stack.append(modified_token)
-                final_token = " ".join(stack)
-                final_arr_user_string.append(final_token)
+            if (token in VALID_SEPARATOR_CHARS and state is None):
+                string = "".join(stack)
+                separated_string.append(string)
                 stack.clear()
-            elif len(stack) != 0 or (contain_start_wrap and not contain_close_wrap):
-                if contain_start_wrap:
-                    wrap_character = token[0]
-                stack.append(modified_token)
             else:
-                final_arr_user_string.append(modified_token)
+                stack.append(token)
 
-        if len(stack) != 0:
+        if state is not None:
             raise ValueError(ParserError.INCOMPLETE_WRAP)
 
-        return final_arr_user_string
+        return separated_string
 
     def parse_input(self, user_input):
         """
@@ -85,7 +63,7 @@ class Parser:
         dict
             key-value pairs from the user input string
         """
-        user_input = user_input.rstrip()
+        user_input = user_input.strip()
 
         if len(user_input) == 0:
             return ValueError(ParserError.EMPTY_STRING)
