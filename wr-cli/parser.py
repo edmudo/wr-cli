@@ -38,7 +38,7 @@ class Parser:
                 state = None
                 continue
 
-            if (token in self.separator_chars and state is None):
+            if token in self.separator_chars and state is None:
                 string = "".join(stack)
                 separated_string.append(string)
                 stack.clear()
