@@ -106,6 +106,7 @@ class Parser:
 
 
 def test():
+    parser = Parser()
     print(parser.parse_input(""))
     print(parser.parse_input("review province"))
     print(parser.parse_input("review province 'Burlington'"))
