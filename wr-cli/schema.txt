@@ -1,0 +1,21 @@
+CREATE TABLE IF NOT EXISTS tblWine
+(country varchar(50),
+price int(4),
+province varchar(40),
+variety varchar(40) NOT NULL,
+winery varchar(50) NOT NULL,
+PRIMARY KEY (variety, winery));
+
+CREATE TABLE IF NOT EXISTS tblReview
+(review_id INTEGER PRIMARY KEY AUTOINCREMENT,
+description varchar(500),
+points int(3),
+taster_twitter_handle int(30) NOT NULL,
+title varchar(100),
+variety varchar(40) NOT NULL,
+winery varchar(50));
+
+CREATE TABLE IF NOT EXISTS tblReviewer
+(taster_name varchar(50),
+taster_twitter_handle varchar(30) NOT NULL,
+PRIMARY KEY (taster_twitter_handle));
