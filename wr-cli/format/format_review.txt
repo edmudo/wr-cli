@@ -1,0 +1,5 @@
+Review ID: {review_id} Points: {points}
+{result_reviewer}
+{result_wine}
+Title: {title}
+Description: {description}

@@ -94,8 +94,17 @@ class Database:
         return wineResults
 
     def query_review(self, kw):
-        base_string = "SELECT * FROM tblReview"
-        add_on_string = self.add_on(kw)
+        base_string = """
+            SELECT review_id, description, points,
+                   tblReviewer.taster_name as taster_name, 
+                   tblReview.taster_twitter_handle as taster_twitter_handle, title,
+                   tblReview.variety as variety, tblWine.winery as winery,
+                   province, country, price
+            FROM tblReview
+            JOIN tblWine ON tblWine.variety = tblReview.variety AND tblReviewer.taster_twitter_handle = tblReview.taster_twitter_handle
+            JOIN tblReviewer ON tblReviewer.taster_twitter_handle = tblReview.taster_twitter_handle
+            """
+        add_on_string = self.add_on(kw, default_table='tblReview')
         reviewSelect = self.connection.execute(base_string + add_on_string)
         reviewResults = reviewSelect.fetchall()
 
@@ -109,7 +118,7 @@ class Database:
 
         return reviewerResults
 
-    def add_on(self, kw):
+    def add_on(self, kw, default_table=None):
         key_values = []
         for key, value in kw.items():
             if key == "_keyword":

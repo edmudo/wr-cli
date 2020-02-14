@@ -69,10 +69,7 @@ class Parser:
         if len(user_input) == 0:
             raise ValueError(ParserError.EMPTY_STRING)
 
-        try:
-            arr_user_string = self._separate_tokens(user_input)
-        except ValueError as e:
-            return e
+        arr_user_string = self._separate_tokens(user_input)
 
         if len(arr_user_string) % 2 == 0 :
             raise ValueError(ParserError.KEY_VALUE_PAIR)
