@@ -78,17 +78,6 @@ class WineReview(cmd.Cmd):
         elif error == ParserError.INCOMPLETE_WRAP:
             print('ERROR: Unclosed quote.')
 
-    def do_quit(self, arg):
-        """Quit Wine Review CLI"""
-        print('Quitting...')
-        self.quit = True
-        self.database.close()
-        sys.exit()
-
-    def do_load(self, arg):
-        """Load data into the database."""
-        self.database.load_data()
-
     def do_help(self, arg):
         """Show the help menu."""
         super().do_help(arg)
@@ -96,6 +85,17 @@ class WineReview(cmd.Cmd):
         if not arg:
             with open("../doc/help.txt", "r") as f:
                 print(f.read())
+
+    def do_load(self, arg):
+        """Load data into the database."""
+        self.database.load_data()
+
+    def do_quit(self, arg):
+        """Quit Wine Review CLI"""
+        print('Quitting...')
+        self.quit = True
+        self.database.close()
+        sys.exit()
 
     def default(self, line):
         try:
@@ -135,8 +135,7 @@ def main():
 
     db_kwargs = dict(schema_path=args.schema_path,
                      data_path=args.data_dir,
-                     database_path=args.database_path
-                     )
+                     database_path=args.database_path)
 
     wine_review = WineReview(prompt_symbol=args.prompt_symbol,
                              db_kwargs=db_kwargs)
