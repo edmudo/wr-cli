@@ -40,7 +40,8 @@ class Parser:
 
             if token in self.separator_chars and state is None:
                 string = "".join(stack)
-                separated_string.append(string)
+                if string:
+                    separated_string.append(string)
                 stack.clear()
             else:
                 stack.append(token)
