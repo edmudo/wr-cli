@@ -119,7 +119,7 @@ class Database:
                     JOIN tblReviewer ON tblReviewer.taster_twitter_handle = tblReview.taster_twitter_handle
                 )
             """
-        add_on_string = self.add_on(kw, default_table='tblReview')
+        add_on_string = self.add_on(kw)
         offset_string = self._get_limit_string(page_offset)
 
         query = base_string + add_on_string + offset_string
