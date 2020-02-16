@@ -3,12 +3,15 @@ import csv
 
 class Database:
     def __init__(self, schema_path='schema.txt', db_path='wine.db',
-                 data_path='data'):
-        self.connection = sqlite3.connect(db_path)
+                 data_path='data', limit=10):
         self.schema_path = schema_path
         self.data_path = data_path
+
+        self.connection = sqlite3.connect(db_path)
         self.connection.row_factory = self.dict_factory
         self.close = self.connection.close
+
+        self.limit = limit
 
     def load_data(self):
         schemaFile = open(self.schema_path, "r")
@@ -67,16 +70,16 @@ class Database:
         self.connection.executemany("INSERT INTO tblReviewer (taster_name, taster_twitter_handle) "
                                     "values (?, ?)", reviewer_array)
 
-    def do_query(self, kw):
+    def do_query(self, kw, **kwargs):
         try:
             if kw['_keyword'] == "wine":
-                return self.query_wine(kw)
+                return self.query_wine(kw, **kwargs)
 
             if kw['_keyword'] == "review":
-                return self.query_review(kw)
+                return self.query_review(kw, **kwargs)
 
             if kw['_keyword'] == "reviewer":
-                return self.query_reviewer(kw)
+                return self.query_reviewer(kw, **kwargs)
         except Exception as e:
             print("Cannot fetch data" + str(e))
 
@@ -86,15 +89,22 @@ class Database:
             d[col[0]] = row[idx]
         return d
 
-    def query_wine(self, kw):
+    def _get_limit_string(self, page_offset):
+        offset = max(self.limit * (page_offset - 1), 0)
+        return f' LIMIT {self.limit} OFFSET {offset} '
+
+    def query_wine(self, kw, page_offset=0):
         base_string = "SELECT * FROM tblWine"
         add_on_string = self.add_on(kw)
-        wineSelect = self.connection.execute(base_string + add_on_string)
+        offset_string = self._get_limit_string(page_offset)
+
+        query = base_string + add_on_string + offset_string
+        wineSelect = self.connection.execute(query)
         wineResults = wineSelect.fetchall()
 
         return wineResults
 
-    def query_review(self, kw):
+    def query_review(self, kw, page_offset=0):
         base_string = """
             SELECT review_id, description, points,
                    tblReviewer.taster_name as taster_name, 
@@ -106,15 +116,21 @@ class Database:
             JOIN tblReviewer ON tblReviewer.taster_twitter_handle = tblReview.taster_twitter_handle
             """
         add_on_string = self.add_on(kw, default_table='tblReview')
-        reviewSelect = self.connection.execute(base_string + add_on_string)
+        offset_string = self._get_limit_string(page_offset)
+
+        query = base_string + add_on_string + offset_string
+        reviewSelect = self.connection.execute(query)
         reviewResults = reviewSelect.fetchall()
 
         return reviewResults
 
-    def query_reviewer(self, kw):
+    def query_reviewer(self, kw, page_offset=0):
         base_string = "SELECT * FROM tblReviewer"
         add_on_string = self.add_on(kw)
-        reviewerSelect = self.connection.execute(base_string + add_on_string)
+        offset_string = self._get_limit_string(page_offset)
+
+        query = base_string + add_on_string + offset_string
+        reviewerSelect = self.connection.execute(query)
         reviewerResults = reviewerSelect.fetchall()
 
         return reviewerResults

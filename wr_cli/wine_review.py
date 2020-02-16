@@ -29,6 +29,7 @@ class WineReview(cmd.Cmd):
 
         self.parser = Parser()
         self.database = Database()
+        self.lastquery = ''
 
     def _format_reviewer_result(self, result):
         with open('format/format_reviewer.txt', 'r') as f:
@@ -92,6 +93,37 @@ class WineReview(cmd.Cmd):
         """Load data into the database."""
         self.database.load_data()
 
+    def do_max(self, arg):
+        """MAX
+        Set the maximum number of results to show.
+
+        syntax: max <num>
+        """
+        if not arg:
+            print('Current result maximum:', self.database.limit)
+            return
+
+        try:
+            limit = int(arg)
+            self.database.limit = limit
+        except ValueError:
+            print('Invalid argument(s)')
+            self.do_help('max')
+
+    def do_page(self, arg):
+        """PAGE
+        Show the next page of results up to the specified maximum.
+        
+        syntax: page <num>
+        """
+        try:
+            page_offset = int(arg)
+            if self.lastquery:
+                self.default(self.lastquery, page_offset=page_offset)
+        except ValueError:
+            print('Invalid argument(s)')
+            self.do_help('page')
+
     def do_quit(self, arg):
         """Quit Wine Review CLI"""
         print('Quitting...')
@@ -99,7 +131,7 @@ class WineReview(cmd.Cmd):
         self.database.close()
         sys.exit()
 
-    def default(self, line):
+    def default(self, line, **kwargs):
         try:
             keywords = self.parser.parse_input(line)
         except ValueError as e:
@@ -107,8 +139,11 @@ class WineReview(cmd.Cmd):
             self._handle_errors(error)
             return
 
-        results = self.database.do_query(keywords)
+        results = self.database.do_query(keywords, **kwargs)
         self._output_results(keywords, results)
+
+        if results:
+            self.lastquery = line
 
     def cmdloop(self, intro=None):
         if intro:
