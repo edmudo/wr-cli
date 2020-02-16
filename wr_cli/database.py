@@ -1,5 +1,12 @@
 import sqlite3
 import csv
+from enum import Enum
+
+
+class DatabaseError(Enum):
+    NO_SUCH_TABLE = 0
+    NO_SUCH_COLUMN = 1
+    UNKNOWN_ERROR = 2
 
 class Database:
     def __init__(self, schema_path='schema.txt', db_path='wine.db',
@@ -79,9 +86,14 @@ class Database:
                 return self.query_review(kw, **kwargs)
 
             if kw['_keyword'] == "reviewer":
-                return self.query_reviewer(kw, **kwargs)
-        except Exception as e:
-            print("Cannot fetch data" + str(e))
+                return self.query_reviewer(kw)
+        except sqlite3.OperationalError as e:
+            print(str(e))
+            if 'table' in str(e):
+                raise ValueError(DatabaseError.NO_SUCH_TABLE)
+            if 'column' in str(e):
+                raise ValueError(DatabaseError.NO_SUCH_COLUMN)
+            raise ValueError(DatabaseError.UNKNOWN_ERROR)
 
     def dict_factory(self, cursor, row):
         d = {}
