@@ -80,19 +80,3 @@ class Parser:
         keywords["_keyword"] = keyword
 
         return keywords
-
-
-def test():
-    parser = Parser()
-    print(parser.parse_input(""))
-    print(parser.parse_input("review province"))
-    print(parser.parse_input("review province 'Burlington'"))
-    print(parser.parse_input('review province "Burlington"'))
-    print(parser.parse_input('review province \'Burlington"'))
-    print(parser.parse_input("review city 'Burlington' title \"It's James'\""))
-    print(parser.parse_input(" review title \"Martha's Best Wine\" province 'Las Vegas' reviewer 'Mike' "))
-    print(parser.parse_input('review province "Burlington\' "VT"'))
-
-
-if __name__ == "__main__":
-    test()

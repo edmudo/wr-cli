@@ -21,6 +21,8 @@ class WineReview(cmd.Cmd):
             self.prompt = prompt_symbol
 
         self.quit = False
+        self.parser = Parser()
+        self.database = Database()
 
         if db_kwargs is None:
             db_kwargs = {}

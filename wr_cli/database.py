@@ -2,15 +2,16 @@ import sqlite3
 import csv
 
 class Database:
-
-    def __init__(self):
-        self.connection = sqlite3.connect("wine.db")
-        self.quit = False
+    def __init__(self, schema_path='schema.txt', db_path='wine.db',
+                 data_path='data'):
+        self.connection = sqlite3.connect(db_path)
+        self.schema_path = schema_path
+        self.data_path = data_path
         self.connection.row_factory = self.dict_factory
         self.close = self.connection.close
 
     def load_data(self):
-        schemaFile = open("schema.txt", "r")
+        schemaFile = open(self.schema_path, "r")
         wineTable = ""
         reviewTable = ""
         reviewerTable = ""
@@ -34,21 +35,21 @@ class Database:
 
         # Read in data for each table from csv files
         wine_array = []
-        with open("data/Wine.csv") as wine_file:
+        with open(f'{self.data_path}/Wine.csv') as wine_file:
             csv_reader = csv.reader(wine_file)
             next(csv_reader)
             for row in csv_reader:
                 wine_array.append(row)
 
         review_array = []
-        with open('data/Review.csv') as review_file:
+        with open(f'{self.data_path}/Review.csv') as review_file:
             csv_reader = csv.reader(review_file)
             next(csv_reader)
             for row in csv_reader:
                 review_array.append(row)
 
         reviewer_array = []
-        with open('data/Reviewer.csv') as reviewer_file:
+        with open(f'{self.data_path}/Reviewer.csv') as reviewer_file:
             csv_reader = csv.reader(reviewer_file)
             next(csv_reader)
             for row in csv_reader:
@@ -129,14 +130,3 @@ class Database:
         else:
             add_on_string = ""
         return add_on_string
-
-def test():
-    database = Database()
-    database.load_data()
-    print(database.do_query(dict(_keyword='wine', variety="Red Blend")))
-    print(database.do_query(dict(_keyword='review', points="82")))
-    print(database.do_query(dict(_keyword='reviewer', taster_name="Michael Schachner")))
-
-
-if __name__ == "__main__":
-    test()
