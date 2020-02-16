@@ -138,12 +138,18 @@ class WineReview(cmd.Cmd):
         sys.exit()
 
     def default(self, line, **kwargs):
+        valid_keywords = ["wine", "reviewer", "review"]
+
         try:
             keywords = self.parser.parse_input(line)
             results = self.database.do_query(keywords, **kwargs)
         except ValueError as e:
             error = e.args[0]
             self._handle_errors(error)
+            return
+
+        if keywords not in valid_keywords:
+            self.do_help(None)
             return
 
         self._output_results(keywords, results)
