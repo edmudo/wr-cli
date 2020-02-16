@@ -106,14 +106,18 @@ class Database:
 
     def query_review(self, kw, page_offset=0):
         base_string = """
-            SELECT review_id, description, points,
-                   tblReviewer.taster_name as taster_name, 
-                   tblReview.taster_twitter_handle as taster_twitter_handle, title,
-                   tblReview.variety as variety, tblWine.winery as winery,
-                   province, country, price
-            FROM tblReview
-            JOIN tblWine ON tblWine.variety = tblReview.variety AND tblReviewer.taster_twitter_handle = tblReview.taster_twitter_handle
-            JOIN tblReviewer ON tblReviewer.taster_twitter_handle = tblReview.taster_twitter_handle
+            SELECT *
+            FROM
+                (
+                    SELECT review_id, description, points,
+                        tblReviewer.taster_name as taster_name, 
+                        tblReview.taster_twitter_handle as taster_twitter_handle, title,
+                        tblReview.variety as variety, tblWine.winery as winery,
+                        province, country, price
+                    FROM tblReview
+                    JOIN tblWine ON tblWine.variety = tblReview.variety AND tblReviewer.taster_twitter_handle = tblReview.taster_twitter_handle
+                    JOIN tblReviewer ON tblReviewer.taster_twitter_handle = tblReview.taster_twitter_handle
+                )
             """
         add_on_string = self.add_on(kw, default_table='tblReview')
         offset_string = self._get_limit_string(page_offset)
@@ -135,7 +139,7 @@ class Database:
 
         return reviewerResults
 
-    def add_on(self, kw, default_table=None):
+    def add_on(self, kw):
         key_values = []
         for key, value in kw.items():
             if key == "_keyword":
