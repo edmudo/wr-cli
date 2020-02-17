@@ -148,8 +148,8 @@ class WineReview(cmd.Cmd):
             self._handle_errors(error)
             return
 
-        if keywords not in valid_keywords:
-            self.do_help(None)
+        if keywords['_keyword'] not in valid_keywords:
+            print('Invalid keyword. Type help or ? to see valid keywords.')
             return
 
         self._output_results(keywords, results)
