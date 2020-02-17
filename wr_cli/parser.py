@@ -5,12 +5,16 @@ class ParserError(Enum):
     EMPTY_STRING = 0
     KEY_VALUE_PAIR = 1
     INCOMPLETE_WRAP = 2
+    INVALID_OPERATOR = 3
 
 
 class Parser:
+    VALID_COMPARISON_OPS = ['>=', '<=', '<', '>']
+
     def __init__(self, wrap_chars='\'"', separator_chars=' '):
         self.wrap_chars = wrap_chars
         self.separator_chars = separator_chars
+        self.comparison_chars = set(''.join(Parser.VALID_COMPARISON_OPS))
 
     def _separate_tokens(self, user_input):
         """
@@ -29,24 +33,36 @@ class Parser:
         separated_string = []
 
         stack = []
-        state = None
+        comp_op = ''
+        wrap_char = ''
         for token in user_input + ' ':
-            if token in self.wrap_chars and state is None:
-                state = token
+            if token in self.wrap_chars and not wrap_char:
+                wrap_char = token
                 continue
-            elif token == state:
-                state = None
+            elif token in self.comparison_chars and not wrap_char:
+                comp_op += token
+                continue
+            elif token == wrap_char:
+                wrap_char = ''
                 continue
 
-            if token in self.separator_chars and state is None:
+            if token in self.separator_chars and not wrap_char:
                 string = "".join(stack)
-                if string:
+
+                if comp_op and comp_op not in Parser.VALID_COMPARISON_OPS:
+                    raise ValueError(ParserError.INVALID_OPERATOR)
+
+                if string and comp_op:
+                    separated_string.append((comp_op, string))
+                    comp_op = ''
+                elif string:
                     separated_string.append(string)
+
                 stack.clear()
             else:
                 stack.append(token)
 
-        if state is not None:
+        if wrap_char:
             raise ValueError(ParserError.INCOMPLETE_WRAP)
 
         return separated_string

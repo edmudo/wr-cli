@@ -155,7 +155,11 @@ class Database:
         for key, value in kw.items():
             if key == "_keyword":
                 continue
-            key_values.append(f"{key}='{value}'")
+            if isinstance(value, tuple):
+                operator, value = value
+            else:
+                operator = '='
+            key_values.append(f"{key}{operator}'{value}'")
         if key_values:
             add_on_string = " WHERE " + " AND ".join(key_values)
         else:
