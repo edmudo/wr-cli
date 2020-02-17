@@ -4,7 +4,7 @@ import os
 import sys
 
 from parser import Parser, ParserError
-from database import Database
+from database import Database, DatabaseError
 
 
 class WineReview(cmd.Cmd):
@@ -80,6 +80,12 @@ class WineReview(cmd.Cmd):
             print('ERROR: Invalid key-value pair.')
         elif error == ParserError.INCOMPLETE_WRAP:
             print('ERROR: Unclosed quote.')
+        elif error == DatabaseError.NO_SUCH_TABLE:
+            print('ERROR: Data table does not exist.')
+        elif error == DatabaseError.NO_SUCH_COLUMN:
+            print('ERROR: Data column does not exist.')
+        elif error == DatabaseError.UNKNOWN_ERROR:
+            print('ERROR: Database error.')
 
     def do_help(self, arg):
         """Show the help menu."""
@@ -134,12 +140,12 @@ class WineReview(cmd.Cmd):
     def default(self, line, **kwargs):
         try:
             keywords = self.parser.parse_input(line)
+            results = self.database.do_query(keywords, **kwargs)
         except ValueError as e:
             error = e.args[0]
             self._handle_errors(error)
             return
 
-        results = self.database.do_query(keywords, **kwargs)
         self._output_results(keywords, results)
 
         if results:

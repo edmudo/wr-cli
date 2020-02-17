@@ -88,7 +88,6 @@ class Database:
             if kw['_keyword'] == "reviewer":
                 return self.query_reviewer(kw)
         except sqlite3.OperationalError as e:
-            print(str(e))
             if 'table' in str(e):
                 raise ValueError(DatabaseError.NO_SUCH_TABLE)
             if 'column' in str(e):
