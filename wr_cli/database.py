@@ -1,5 +1,6 @@
-import sqlite3
 import csv
+import sqlite3
+
 from enum import Enum
 
 
@@ -7,6 +8,9 @@ class DatabaseError(Enum):
     NO_SUCH_TABLE = 0
     NO_SUCH_COLUMN = 1
     UNKNOWN_ERROR = 2
+    MISSING_DATA = 3
+    MISSING_SCHEMA = 4
+
 
 class Database:
     def __init__(self, schema_path='schema.txt', db_path='wine.db',
@@ -21,50 +25,41 @@ class Database:
         self.limit = limit
 
     def load_data(self):
-        schemaFile = open(self.schema_path, "r")
-        wineTable = ""
-        reviewTable = ""
-        reviewerTable = ""
+        try:
+            # Read in create statements for each table from schema.txt file
+            with open(self.schema_path, "r") as schema_file:
+                script = schema_file.read()
+                self.connection.executescript(script)
+        except FileNotFoundError as e:
+            e.args = (*e.args, DatabaseError.MISSING_SCHEMA)
+            raise e
 
-        # Read in create statements for each table from schema.txt file
-        for x in range(7):
-            wineTable += schemaFile.readline()
+        try:
+            # Read in data for each table from csv files
+            wine_array = []
+            with open(f'{self.data_path}/Wine.csv') as wine_file:
+                csv_reader = csv.reader(wine_file)
+                next(csv_reader)
+                for row in csv_reader:
+                    wine_array.append(row)
 
-        schemaFile.readline()
-        for x in range(8):
-            reviewTable += schemaFile.readline()
+            review_array = []
+            with open(f'{self.data_path}/Review.csv') as review_file:
+                csv_reader = csv.reader(review_file)
+                next(csv_reader)
+                for row in csv_reader:
+                    review_array.append(row)
 
-        schemaFile.readline()
-        for x in range(4):
-            reviewerTable += schemaFile.readline()
-
-        # Create wine, review and reviewer tables
-        self.connection.execute(wineTable)
-        self.connection.execute(reviewTable)
-        self.connection.execute(reviewerTable)
-
-        # Read in data for each table from csv files
-        wine_array = []
-        with open(f'{self.data_path}/Wine.csv') as wine_file:
-            csv_reader = csv.reader(wine_file)
-            next(csv_reader)
-            for row in csv_reader:
-                wine_array.append(row)
-
-        review_array = []
-        with open(f'{self.data_path}/Review.csv') as review_file:
-            csv_reader = csv.reader(review_file)
-            next(csv_reader)
-            for row in csv_reader:
-                review_array.append(row)
-
-        reviewer_array = []
-        with open(f'{self.data_path}/Reviewer.csv') as reviewer_file:
-            csv_reader = csv.reader(reviewer_file)
-            next(csv_reader)
-            for row in csv_reader:
-                if row not in reviewer_array:
-                    reviewer_array.append(row)
+            reviewer_array = []
+            with open(f'{self.data_path}/Reviewer.csv') as reviewer_file:
+                csv_reader = csv.reader(reviewer_file)
+                next(csv_reader)
+                for row in csv_reader:
+                    if row not in reviewer_array:
+                        reviewer_array.append(row)
+        except FileNotFoundError as e:
+            e.args = (*e.args, DatabaseError.MISSING_DATA)
+            raise e
 
         # Insert data into wine, review and reviewer tables
         self.connection.executemany("INSERT INTO tblWine (country, price, province, variety, winery) "
@@ -76,6 +71,8 @@ class Database:
 
         self.connection.executemany("INSERT INTO tblReviewer (taster_name, taster_twitter_handle) "
                                     "values (?, ?)", reviewer_array)
+
+        self.connection.commit()
 
     def do_query(self, kw, **kwargs):
         try:

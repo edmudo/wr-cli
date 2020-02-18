@@ -86,6 +86,10 @@ class WineReview(cmd.Cmd):
             print('ERROR: Data column does not exist.')
         elif error == DatabaseError.UNKNOWN_ERROR:
             print('ERROR: Database error.')
+        elif error == DatabaseError.MISSING_DATA:
+            print('ERROR: Missing data files.')
+        elif error == DatabaseError.MISSING_SCHEMA:
+            print('ERROR: Missing table schema.')
 
     def do_help(self, arg):
         """Show the help menu."""
@@ -97,7 +101,12 @@ class WineReview(cmd.Cmd):
 
     def do_load(self, arg):
         """Load data into the database."""
-        self.database.load_data()
+        try:
+            self.database.load_data()
+        except FileNotFoundError as e:
+            error = e.args[2]
+            self._handle_errors(error)
+            return
 
     def do_max(self, arg):
         """MAX
