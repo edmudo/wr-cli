@@ -1,3 +1,5 @@
+import os
+
 class ResourceQuery:
     INSERT_WINE = """REPLACE INTO tblWine (country, price, province, variety, winery) values (?, ?, ?, ?, ?)"""
     INSERT_REVIEW = """REPLACE INTO tblReview (review_id, description, points, taster_twitter_handle, title, variety, winery) values (?, ?, ?, ?, ?, ?, ?)"""
@@ -20,3 +22,11 @@ class ResourceQuery:
                     """
 
     ADDON_LIMIT = """ LIMIT {0:d} OFFSET {1:d} """
+
+class ResourcePath:
+    DIRECTORY = os.path.dirname(__file__)
+    FORMAT_PATH = f'{DIRECTORY}/format'
+
+    WINEF_PATH = f'{FORMAT_PATH}/format_wine.txt'
+    REVIEWF_PATH = f'{FORMAT_PATH}/format_review.txt'
+    REVIEWERF_PATH = f'{FORMAT_PATH}/format_reviewer.txt'

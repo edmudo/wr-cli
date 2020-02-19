@@ -1,3 +1,5 @@
+from resources import ResourcePath as P
+
 import argparse
 import cmd
 import os
@@ -31,28 +33,9 @@ class WineReview(cmd.Cmd):
         self.database = Database(**db_kwargs)
         self.lastquery = ''
 
-    def _format_reviewer_result(self, result):
-        directory = os.path.dirname(__file__)
-        with open(f'{directory}/format/format_reviewer.txt', 'r') as f:
+    def _format_result(self, path, result):
+        with open(path, 'r') as f:
             out_string = f.read().format(**result)
-        return out_string
-
-    def _format_wine_result(self, result):
-        directory = os.path.dirname(__file__)
-        with open(f'{directory}/format/format_wine.txt', 'r') as f:
-            out_string = f.read().format(**result)
-        return out_string
-
-    def _format_review_result(self, result):
-        result_wine = self._format_wine_result(result)
-        result_reviewer = self._format_reviewer_result(result)
-
-        directory = os.path.dirname(__file__)
-        with open(f'{directory}/format/format_review.txt', 'r') as f:
-            out_string = f.read().format(result_wine=result_wine,
-                                         result_reviewer=result_reviewer,
-                                         **result)
-
         return out_string
 
     def _output_results(self, kw, results):
@@ -60,16 +43,21 @@ class WineReview(cmd.Cmd):
             print('No results.')
             return
 
-        for result in results:
-            rows, cols = os.popen('stty size', 'r').read().split()
-            sep = ''.join(['-' for i in range(int(cols))])
+        rows, cols = os.popen('stty size', 'r').read().split()
+        sep = ''.join(['-' for i in range(int(cols))])
 
+        for result in results:
             if kw["_keyword"].lower() == "wine":
-                output = self._format_wine_result(result)
+                output = self._format_result(P.WINEF_PATH, result)
             elif kw['_keyword'].lower() == "reviewer":
-                output = self._format_reviewer_result(result)
+                output = self._format_result(P.REVIEWERF_PATH, result)
             elif kw['_keyword'].lower() == "review":
-                output = self._format_review_result(result)
+                wine_out = self._format_result(P.WINEF_PATH, result)
+                reviewer_out = self._format_result(P.REVIEWERF_PATH, result)
+
+                result = dict(result_wine=wine_out, result_reviewer=reviewer_out,
+                              **result)
+                output = self._format_result(P.REVIEWF_PATH, result)
 
             print(output.strip())
 
@@ -83,6 +71,8 @@ class WineReview(cmd.Cmd):
             print('ERROR: Invalid key-value pair.')
         elif error == ParserError.INCOMPLETE_WRAP:
             print('ERROR: Unclosed quote.')
+        elif error == ParserError.INVALID_OPERATOR:
+            print('ERROR: Invalid comparison operator.')
         elif error == DatabaseError.NO_SUCH_TABLE:
             print('ERROR: Data table does not exist.')
         elif error == DatabaseError.NO_SUCH_COLUMN:
