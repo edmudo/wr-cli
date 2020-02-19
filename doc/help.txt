@@ -13,7 +13,11 @@ quotes.
 Operators such as >, <=, and etc. are used to compare the string the alphabetically
 or if the string such as a title has an operator in it, it will ignore said operator
 and read around the operator. Also. the operator will compare numerical inputs such
-as prices as well.
+as prices as well. For example if you want a wine greater than equal 10, you would want
+to search "price >= 10 "
+
+Pages are used to hold a number of limited results. And, you are can to switch
+pages to look at more results up to the limited amount.
 
 Example:
 
