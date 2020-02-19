@@ -1,2 +1,2 @@
-from cli import main
+from wine_review import main
 main()

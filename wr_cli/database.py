@@ -2,6 +2,7 @@ from resources import ResourceQuery as Q
 
 import csv
 import sqlite3
+import os
 
 from enum import Enum
 
@@ -15,10 +16,19 @@ class DatabaseError(Enum):
 
 
 class Database:
-    def __init__(self, schema_path='schema.txt', db_path='wine.db',
-                 data_path='data', limit=10):
+    def __init__(self, data_dir=None, db_path=None, schema_path=None, limit=10):
+        if data_dir is None:
+            data_dir = 'data'
+
+        if db_path is None:
+            db_path = 'wine.db'
+
+        if schema_path is None:
+            directory = os.path.dirname(__file__)
+            schema_path = f'{directory}/schema.txt'
+
+        self.data_path = data_dir
         self.schema_path = schema_path
-        self.data_path = data_path
 
         self.connection = sqlite3.connect(db_path)
         self.connection.row_factory = sqlite3.Row

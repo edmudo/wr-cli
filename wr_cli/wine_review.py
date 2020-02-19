@@ -28,16 +28,18 @@ class WineReview(cmd.Cmd):
             db_kwargs = {}
 
         self.parser = Parser()
-        self.database = Database()
+        self.database = Database(**db_kwargs)
         self.lastquery = ''
 
     def _format_reviewer_result(self, result):
-        with open('format/format_reviewer.txt', 'r') as f:
+        directory = os.path.dirname(__file__)
+        with open(f'{directory}/format/format_reviewer.txt', 'r') as f:
             out_string = f.read().format(**result)
         return out_string
 
     def _format_wine_result(self, result):
-        with open('format/format_wine.txt', 'r') as f:
+        directory = os.path.dirname(__file__)
+        with open(f'{directory}/format/format_wine.txt', 'r') as f:
             out_string = f.read().format(**result)
         return out_string
 
@@ -45,7 +47,8 @@ class WineReview(cmd.Cmd):
         result_wine = self._format_wine_result(result)
         result_reviewer = self._format_reviewer_result(result)
 
-        with open('format/format_review.txt', 'r') as f:
+        directory = os.path.dirname(__file__)
+        with open(f'{directory}/format/format_review.txt', 'r') as f:
             out_string = f.read().format(result_wine=result_wine,
                                          result_reviewer=result_reviewer,
                                          **result)
@@ -191,9 +194,9 @@ def main():
                     help='The database path to read and write the database.')
     args = ap.parse_args()
 
-    db_kwargs = dict(schema_path=args.schema_path,
-                     data_path=args.data_dir,
-                     database_path=args.database_path)
+    db_kwargs = dict(data_dir=args.data_dir,
+                     db_path=args.database_path,
+                     schema_path=args.schema_path)
 
     wine_review = WineReview(prompt_symbol=args.prompt_symbol,
                              db_kwargs=db_kwargs)
