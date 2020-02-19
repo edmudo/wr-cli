@@ -10,6 +10,11 @@ suggested keys are listed below.
 Values with multiple words should be encapsulated with either single or double
 quotes.
 
+Operators such as >, <=, and etc. are used to compare the string the alphabetically
+or if the string such as a title has an operator in it, it will ignore said operator
+and read around the operator. Also. the operator will compare numerical inputs such
+as prices as well.
+
 Example:
 
 wine points 86 taster_name "Jim Gordon"
