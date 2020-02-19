@@ -16,7 +16,7 @@ class ResourceQuery:
                             tblReview.variety as variety, tblWine.winery as winery,
                             province, country, price
                         FROM tblReview
-                        JOIN tblWine ON tblWine.variety = tblReview.variety AND tblReviewer.taster_twitter_handle = tblReview.taster_twitter_handle
+                        JOIN tblWine ON tblWine.variety = tblReview.variety AND tblWine.winery = tblReview.winery
                         JOIN tblReviewer ON tblReviewer.taster_twitter_handle = tblReview.taster_twitter_handle
                     )
                     """
