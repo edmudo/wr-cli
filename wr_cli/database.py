@@ -112,7 +112,14 @@ class Database:
             if isinstance(value, tuple):
                 operator, value = value
             else:
-                operator = '='
+                try:
+                    float(value)
+                except ValueError:
+                    operator = ' LIKE '
+                    value = f'%{value}%'
+                else:
+                    operator = '='
+
             key_values.append(f"{key}{operator}'{value}'")
         if key_values:
             add_on_string = " WHERE " + " AND ".join(key_values)

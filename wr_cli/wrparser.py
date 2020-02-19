@@ -9,7 +9,7 @@ class ParserError(Enum):
 
 
 class Parser:
-    VALID_COMPARISON_OPS = ['>=', '<=', '<', '>']
+    VALID_COMPARISON_OPS = ['>=', '<=', '<', '>', '=']
 
     def __init__(self, wrap_chars='\'"', separator_chars=' '):
         self.wrap_chars = wrap_chars
