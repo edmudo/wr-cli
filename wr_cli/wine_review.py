@@ -38,7 +38,7 @@ class WineReview(cmd.Cmd):
             out_string = f.read().format(**result)
         return out_string
 
-    def _output_results(self, kw, results):
+    def _concat_results(self, kw, results):
         if not results:
             print('No results.')
             return
@@ -49,6 +49,7 @@ class WineReview(cmd.Cmd):
             cols = 10
         sep = ''.join(['-' for i in range(int(cols))])
 
+        output_all = ''
         for result in results:
             if kw["_keyword"].lower() == "wine":
                 output = self._format_result(P.WINEF_PATH, result)
@@ -62,10 +63,11 @@ class WineReview(cmd.Cmd):
                               **result)
                 output = self._format_result(P.REVIEWF_PATH, result)
 
-            print(output.strip())
+            output_all += output.strip() + '\n'
 
             if result is not results[-1]:
-                print(sep)
+                output_all += sep + '\n'
+        return output_all
 
     def _handle_errors(self, error):
         if error == ParserError.EMPTY_STRING:
@@ -157,7 +159,8 @@ class WineReview(cmd.Cmd):
             print('Invalid keyword. Type help or ? to see valid keywords.')
             return
 
-        self._output_results(keywords, results)
+        output = self._output_results(keywords, results)
+        print(output)
 
         if results:
             self.lastquery = line
