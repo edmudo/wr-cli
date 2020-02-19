@@ -43,7 +43,10 @@ class WineReview(cmd.Cmd):
             print('No results.')
             return
 
-        rows, cols = os.popen('stty size', 'r').read().split()
+        try:
+            cols, _ = os.get_terminal_size()
+        except OSError:
+            cols = 10
         sep = ''.join(['-' for i in range(int(cols))])
 
         for result in results:
