@@ -1,29 +1,33 @@
 A command line interface for accessing the wine review data.
 
-syntax: keyword [key value] ...
+syntax: {command, keyword} [key [conditional]value] ...
 
 `key` is the search field to match with `value` when retrieving data according
-to `keyword`. Multiple key-value pairs may be specified. A descriptive error
-is notified to the user if there is an error with the input. Keywords and
-suggested keys are listed below.
+to `keyword`. Multiple key-value pairs may be specified. A descriptive error is
+notified to the user if there is an error with the input. Keywords and
+suggested keys are listed below. A keyword without parameters will get all
+results.
 
 Values with multiple words should be encapsulated with either single or double
 quotes.
 
-Operators such as >, <=, and etc. are used to compare the string the alphabetically
-or if the string such as a title has an operator in it, it will ignore said operator
-and read around the operator. Also. the operator will compare numerical inputs such
-as prices as well. For example if you want a wine greater than equal 10, you would want
-to search "price >= 10 "
+Conditional operators specified before a value, such as >, <=, etc, searches a
+string alphabetically or numerically compared to the value. There may be space
+between the conditional and the value. Conditionals may be ignored if it is
+part of a value by wrapping the value in quotes.
 
-Pages are used to hold a number of limited results. And, you are can to switch
-pages to look at more results up to the limited amount.
+Results are limited to 10 by default, but may be changed by the `max` command.
+To see more results from the last successful query, use the `page` command. The
+command `page 1` will yield the same results as the initial command.
+
+Use the `help` command for more commands and `help <command>` for more
+information on the command.
 
 Example:
 
-wine points 86 taster_name "Jim Gordon"
+review points <=86 price >10 taster_name "Jim Gordon"
 
 Keywords: review, reviewer, wine
-Review Keys: description, points, title, taster_twitter_handle, variety, winery
+Review Keys: description, points, title, (and any keys in Reviewer or Wine)
 Reviewer Keys: taster_name, taster_twitter_handle
 Wine Keys: country, price, province, variety, winery
