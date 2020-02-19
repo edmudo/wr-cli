@@ -1,5 +1,3 @@
-from resources import ResourcePath as P
-
 import argparse
 import cmd
 import os
@@ -7,6 +5,7 @@ import sys
 
 from wrparser import Parser, ParserError
 from database import Database, DatabaseError
+from resources import ResourcePath as P
 
 
 class WineReview(cmd.Cmd):
@@ -159,7 +158,7 @@ class WineReview(cmd.Cmd):
             print('Invalid keyword. Type help or ? to see valid keywords.')
             return
 
-        output = self._output_results(keywords, results)
+        output = self._concat_results(keywords, results)
         print(output)
 
         if results:
