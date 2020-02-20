@@ -1,0 +1,675 @@
+country,price,province,variety,winery
+Spain,19.0,Catalonia,Red Blend,Garb√≥
+US,20.0,Washington,Zinfandel,Zefina
+US,26.0,California,Tempranillo,Hovey
+US,28.0,California,Red Blend,ONX
+France,70.0,Burgundy,Pinot Noir,Domaine de Bellene
+US,45.0,Oregon,Pinot Noir,Raptor Ridge
+Israel,16.0,Samson,Cabernet Sauvignon-Shiraz,Binyamina
+US,38.0,California,Chardonnay,Spell
+US,45.0,California,Pinot Noir,Trombetta
+US,58.0,California,Pinot Noir,Fess Parker
+Lebanon,50.0,Bekaa Valley,Red Blend,Ch√¢teau Musar
+France,25.0,Beaujolais,Gamay,Ch√¢teau du Ch√¢telard
+France,44.0,Rh√¥ne Valley,Syrah,Gilles Flacher
+Italy,28.0,Northeastern Italy,Pinot Bianco,Mario Schiopetto
+US,40.0,California,Chardonnay,EnRoute
+US,23.0,Oregon,Pinot Noir,Andrew Rich
+Austria,19.0,Thermenregion,Zierfandler,Stadlmann
+Italy,50.0,Veneto,Red Blend,Albino Armani
+Chile,25.0,Aconcagua Costa,Syrah,Errazuriz
+Italy,35.0,Piedmont,Nebbiolo,Borgogno F.lli Serio e Battista
+Argentina,14.0,Mendoza Province,Chardonnay,Alfredo Roca
+Italy,32.0,Sicily & Sardinia,Red Blend,Planeta
+US,19.0,California,Zinfandel,Nanna's Short Cake
+Italy,20.0,Northeastern Italy,Sauvignon Blanc,Attems
+US,25.0,California,Pinot Blanc,Wente
+US,34.0,California,Chardonnay,Stag's Leap Wine Cellars
+Italy,37.0,Northeastern Italy,Lagrein,Franz Haas
+US,72.0,California,Pinot Noir,Saintsbury
+US,34.0,Washington,Merlot,Gifford Hirlinger
+Italy,60.0,Veneto,Red Blend,Corte San Benedetto
+Spain,10.0,Northern Spain,Garnacha,Figaro
+US,14.0,California,Moscato,Quady
+US,23.0,California,Grenache,Naggiar
+Italy,30.0,Tuscany,Sangiovese,Tenuta San Vito
+Portugal,22.0,Alentejano,Portuguese Red,Casa Agricola Alexandre Relvas
+Argentina,20.0,Other,Red Blend,San Huberto
+US,50.0,California,Pinot Noir,W.H. Smith
+US,15.0,California,Sauvignon Blanc,Berryhill
+US,28.0,California,Pinot Noir,La Pitchoune
+France,26.0,France Other,Sparkling Blend,Andre et Mireille Tissot
+France,30.0,Bordeaux,Bordeaux-style White Blend,Ch√¢teau Mont-P√©rat
+Argentina,36.0,Mendoza Province,Cabernet Sauvignon,Riglos
+France,16.0,Beaujolais,Gamay Noir,Ch√¢teau de la Terri√®re
+Italy,30.0,Northeastern Italy,Ribolla Gialla,La Tunella
+Italy,15.0,Central Italy,Sangiovese,Castelluccio
+France,16.0,Rh√¥ne Valley,Rh√¥ne-style Red Blend,Domaine le Renard
+US,18.0,Oregon,Ros√©,Hip Chicks
+France,34.0,Bordeaux,Bordeaux-style Red Blend,Clos Puy Arnaud
+US,25.0,Washington,Merlot,Kiona
+Chile,20.0,Aconcagua Costa,Chardonnay,Errazuriz
+Chile,11.0,Casablanca Valley,Sauvignon Blanc,William Cole
+France,25.0,Burgundy,Chardonnay,Domaine des Gandines
+France,20.0,Bordeaux,Bordeaux-style Red Blend,Ch√¢teau Lapelletrie
+US,55.0,California,Chardonnay,Tamber Bey
+Portugal,18.0,Tejo,Portuguese Red,Quinta do Cavalinho
+Portugal,230.0,Madeira,Bual,Blandy's
+US,18.0,Oregon,Pinot Gris,Lumos
+US,21.0,California,Monastrell,Bokisch
+US,75.0,California,Cabernet Sauvignon,Kenwood
+France,275.0,Champagne,Champagne Blend,J. Dumangin Fils
+Australia,30.0,South Australia,Cabernet Sauvignon,Langmeil
+US,48.0,California,Red Blend,Armida
+US,17.0,Colorado,Cabernet Sauvignon,Kingman
+US,49.0,California,Petite Sirah,Aver Family Vineyards
+US,81.0,California,Pinot Noir,Testarossa
+Argentina,15.0,Mendoza Province,Sauvignon Blanc,Casarena
+France,17.0,Provence,Ros√©,Domaine de la Sangli√®re
+Italy,21.0,Tuscany,Vermentino,Nittardi
+France,58.0,Champagne,Champagne Blend,Roland Champion
+Spain,22.0,Northern Spain,Tempranillo,Vi√±a Vilano
+US,14.0,California,Sauvignon Blanc,Murphy-Goode
+Italy,48.0,Piedmont,Nebbiolo,Giribaldi
+Chile,15.0,Colchagua Valley,Carmen√®re,Vi√±a Bisquertt
+France,20.0,Alsace,Sparkling Blend,Ren√© Mur√©
+US,30.0,Washington,Syrah,North by Northwest
+Italy,152.0,Tuscany,Sangiovese,Il Paradiso di Manfredi
+Spain,25.0,Northern Spain,Tempranillo,Larchago
+US,26.0,California,Merlot,Martin Ranch
+US,24.0,California,Merlot,Talaria
+US,25.0,Washington,Rh√¥ne-style Red Blend,Scarborough
+Israel,35.0,Negev Hills,Cabernet Sauvignon,Kadesh Barnea
+France,30.0,Bordeaux,Bordeaux-style White Blend,Ch√¢teau la Garde
+Italy,75.0,Piedmont,Nebbiolo,Tenuta Rocca
+Italy,40.0,Piedmont,Nebbiolo,Collina San Ponzio
+US,30.0,California,Red Blend,Roth
+Spain,18.0,Catalonia,Pinot Noir,Marqu√©s de Gelida
+New Zealand,20.0,Marlborough,Sauvignon Blanc,Huia
+France,23.0,Alsace,Sparkling Blend,Pierre Sparr
+US,24.0,Oregon,Pinot Noir,Seven of Hearts
+US,33.0,Washington,Bordeaux-style Red Blend,Browne Family Vineyards
+France,73.0,Rh√¥ne Valley,Rh√¥ne-style Red Blend,Tardieu-Laurent
+France,69.0,Burgundy,Chardonnay,La Chablisienne
+US,45.0,California,Pinot Noir,Churchill Cellars
+Italy,75.0,Veneto,Red Blend,Masi
+US,20.0,California,Sangiovese,Trentadue
+France,18.0,Provence,Ros√©,Domaine Houchart
+US,48.0,California,Pinot Noir,Sojourn
+US,16.0,California,Rh√¥ne-style Red Blend,Quadrant
+US,42.0,California,Pinot Noir,WillowBrook Cellars
+Chile,15.0,Maipo Valley,Merlot,Santa Ema
+France,20.0,Burgundy,Chardonnay,Cave de Lugny
+Italy,50.0,Northeastern Italy,Sauvignon,Vie di Romans
+US,42.0,California,Chardonnay,Rideau
+US,30.0,California,Clairette,Donkey & Goat
+Portugal,18.0,Port,Port,C√°lem
+US,60.0,California,Syrah,Vagabond
+US,20.0,California,Merlot,Frei Brothers
+US,26.0,California,Chardonnay,Lawer
+US,150.0,California,Pinot Noir,Wayfarer
+Italy,90.0,Tuscany,Sangiovese,Villa I Cipressi
+US,20.0,California,Sauvignon Blanc,Merriam
+US,80.0,California,Chardonnay,Wayfarer
+France,26.0,Southwest France,Malbec,Ch√¢teau de C√©nac
+US,45.0,Washington,Cabernet Sauvignon,Elevation Cellars
+US,25.0,California,Chardonnay,Hahn
+Australia,15.0,South Australia,Shiraz,Wynns Coonawarra Estate
+Italy,60.0,Tuscany,Sangiovese,La Fiorita
+France,50.0,Burgundy,Pinot Noir,Domaine Jeannin-Naltet
+US,24.0,California,Petite Sirah,Fiddletown Cellars
+France,22.0,Beaujolais,Gamay,Henry Fessy
+France,25.0,Bordeaux,Bordeaux-style Red Blend,Ch√¢teau du Seuil
+France,25.0,Rh√¥ne Valley,Ros√©,Prieur√© de Mont√©zargues
+Austria,16.0,Wachau,Gr√ºner Veltliner,Dom√§ne Wachau
+Italy,24.0,Northeastern Italy,Gew√ºrztraminer,Abbazia di Novacella
+Spain,18.0,Catalonia,Garnacha,Scala Dei
+US,13.0,California,Chardonnay,Smart Cookie
+France,9.0,Languedoc-Roussillon,Rh√¥ne-style Red Blend,Ch√¢teau Comte Devaugelas
+France,13.0,Southwest France,Sauvignon Blanc,Georges Vigouroux
+Austria,19.0,Nieder√∂sterreich,Red Blend,Arndorfer
+Austria,19.0,Thermenregion,Zweigelt,Johanneshof Reinisch
+Chile,11.0,Maipo Valley,Cabernet Sauvignon-Merlot,Santa Ema
+Portugal,27.0,Alentejo,Portuguese Red,Herdade do Espor√£o
+Australia,18.0,South Australia,Shiraz,Longwood
+Chile,20.0,Maipo Valley,Cabernet Sauvignon,Haras
+France,33.0,Burgundy,Chardonnay,Domaine du Chalet Pouilly
+US,16.0,California,Cabernet Sauvignon,Liberty School
+Portugal,24.0,Port,Port,Offley
+France,15.0,Southwest France,Sauvignon Blanc,Cave du Marmandais
+US,75.0,Oregon,Cabernet Sauvignon-Merlot,Cayuse
+France,22.0,Bordeaux,Bordeaux-style Red Blend,Ch√¢teau Saint-Michel
+US,36.0,Washington,Cabernet Sauvignon,Trust
+US,30.0,California,White Blend,Paraduxx
+US,20.0,California,Sauvignon Blanc,Galvan
+Italy,28.0,Veneto,Glera,Valdo
+US,40.0,California,Chardonnay,Buena Vista
+Spain,16.0,Andalucia,Sherry,Delgado Zuleta
+Italy,78.0,Piedmont,Nebbiolo,Poderi Luigi Einaudi
+Spain,30.0,Northern Spain,Verdejo,Eresma
+US,56.0,California,Pinot Noir,Red Stitch
+Slovenia,15.0,Goriska Brda,Ribolla Gialla,Colliano
+Argentina,10.0,Mendoza Province,Bonarda,Alma del Sur
+US,58.0,California,Pinot Noir,Failla
+US,35.0,Washington,Rh√¥ne-style Red Blend,G√•rd
+France,10.0,Provence,Ros√©,Ch√¢teau Montaud
+US,30.0,California,Grenache,Gauguine
+US,55.0,Washington,Syrah,Corliss Estates
+France,35.0,Burgundy,Pinot Noir,Domaines Devillard
+Chile,14.0,Colchagua Valley,Cabernet Sauvignon,Calcu
+US,25.0,California,Chardonnay,Rutherford Hill
+Australia,85.0,South Australia,Shiraz,D'Arenberg
+Argentina,40.0,Mendoza Province,Bordeaux-style Red Blend,Bressia
+South Africa,10.0,Western Cape,Sauvignon Blanc,Indaba
+US,18.0,Washington,White Blend,McCrea
+US,30.0,Washington,Cabernet Sauvignon,Forgeron
+Spain,16.0,Levante,Red Blend,El Molet
+US,85.0,California,Cabernet Sauvignon,Stags' Leap Winery
+Italy,50.0,Central Italy,Sagrantino,Scacciadiavoli
+Spain,95.0,Catalonia,Red Blend,Vall Llach
+France,22.0,Southwest France,Duras,Robert et Bernard Plageoles
+Australia,95.0,Victoria,Shiraz-Viognier,Yarra Yering
+Spain,10.0,Northern Spain,Tempranillo,Pagos del Rey
+US,30.0,California,Zinfandel,Joseph Swan Vineyards
+Portugal,275.0,Alentejo,Portuguese Red,Cartuxa
+Australia,17.0,Western Australia,Chardonnay,Robert Oatley
+US,40.0,California,Rh√¥ne-style Red Blend,Kaleidos
+US,40.0,Oregon,Pinot-Chardonnay,ENSO
+Portugal,15.0,Douro,Portuguese Red,Quinta de Porrais
+Spain,127.0,Northern Spain,Tempranillo,Telmo Rodr√≠guez
+US,38.0,California,Pinot Noir,Flying Goat Cellars
+US,38.0,California,Chardonnay,ZD
+US,24.0,California,S√©millon,Frostwatch
+US,34.0,California,Cabernet Sauvignon,Louis M. Martini
+US,28.0,Washington,Viognier,Abeja
+France,25.0,Bordeaux,Bordeaux-style Red Blend,Ch√¢teau Haut Peyrefaure
+France,40.0,Bordeaux,Bordeaux-style Red Blend,Chateau Haut Rian
+Argentina,32.0,Mendoza Province,Malbec,Luca
+US,34.0,California,Pinot Noir,Bravium
+US,25.0,California,Zinfandel,Decoy
+US,25.0,Oregon,Pinot Noir,Coelho
+US,32.0,California,Red Blend,Mesa Del Sol
+US,45.0,California,Pinot Noir,JCR
+Italy,28.0,Tuscany,Vernaccia,Guicciardini Strozzi
+US,13.0,California,Viognier,The White Knight
+Argentina,35.0,Mendoza Province,Red Blend,Domaine Bousquet
+US,35.0,Washington,Syrah,Burnt Bridge
+US,40.0,Colorado,Bordeaux-style Red Blend,Sutcliffe
+France,16.0,Bordeaux,Bordeaux-style White Blend,Ch√¢teau Lamothe de Haux
+Italy,30.0,Tuscany,Rosato,Fattoria Sardi
+Chile,20.0,Colchagua Valley,Cabernet Sauvignon,Caliterra
+US,34.0,California,Zinfandel,Beaulieu Vineyard
+US,78.0,California,Cabernet Sauvignon,Lucas & Lewellen
+US,28.0,California,Ros√©,HammerSky
+US,16.0,Washington,Red Blend,Helix by Reininger
+US,18.0,Washington,Ros√©,Wine o'Clock
+Chile,11.0,Colchagua Valley,Carmen√®re,La Playa
+Spain,30.0,Levante,White Blend,Angosto
+Australia,17.0,South Australia,Shiraz,Wakefield
+Spain,16.0,Northern Spain,Tempranillo,Hemar
+New Zealand,13.0,Marlborough,Sauvignon Blanc,Sileni
+US,45.0,California,Cabernet Sauvignon,Oakville Winery
+US,28.0,California,Merlot,Brander
+US,24.0,Washington,Bordeaux-style Red Blend,Cloudlift Cellars
+France,17.0,Alsace,Pinot Blanc,Domaine Eug√®ne Meyer
+Chile,65.0,Curic√≥ Valley,Cabernet Sauvignon,Miguel Torres
+US,175.0,Washington,Syrah,Cayuse
+Italy,23.0,Northeastern Italy,Pinot Bianco,Elena Walch
+Greece,17.0,Nemea,Agiorgitiko,Boutari
+Italy,40.0,Tuscany,Sangiovese,Fattoria La Lecciaia
+US,18.0,California,Rh√¥ne-style Red Blend,Domaine de la Terre Rouge
+Israel,38.0,Galilee,Chardonnay,Pelter
+US,100.0,Oregon,Pinot Noir,Styring
+Greece,25.0,Markopoulo,Savatiano,Papagiannakos
+US,25.0,Washington,Picpoul,Callan
+Georgia,12.0,Kakheti,Rkatsiteli,Tbilvino
+US,59.0,California,Cabernet Sauvignon,6 North
+US,26.0,California,Chardonnay,Riverbench
+Italy,48.0,Tuscany,Red Blend,Ca' Marcanda
+Austria,24.0,Traisental,Riesling,Markus Huber
+US,25.0,California,Pinot Noir,Laetitia
+US,27.0,California,Chardonnay,William Hill Estate
+Italy,35.0,Sicily & Sardinia,Carricante,Pietradolce
+Spain,13.0,Northern Spain,Tinta de Toro,Bodegas Monte La Reina
+US,68.0,California,Cabernet Sauvignon,Vincent Vineyards
+US,29.0,California,Sangiovese,Turchi
+US,65.0,California,Cabernet Sauvignon,Taplin Cellars
+France,29.0,Bordeaux,Bordeaux-style Red Blend,Ch√¢teau de Roquebrune
+US,85.0,Washington,Merlot,Northstar
+Spain,19.0,Galicia,Albari√±o,Nora
+France,65.0,Rh√¥ne Valley,Rh√¥ne-style Red Blend,Ch√¢teau La Nerthe
+Italy,35.0,Lombardy,Sparkling Blend,Fratelli Berlucchi
+Chile,32.0,Maipo Valley,Cabernet Sauvignon,Indomita
+France,50.0,Champagne,Champagne Blend,Heidsieck & Co Monopole
+Italy,18.0,Veneto,Sparkling Blend,Tenuta degli Ultimi
+France,25.0,Bordeaux,Bordeaux-style Red Blend,Ch√¢teau Fr√©dignac
+US,14.0,California,Chardonnay,Maddalena
+US,72.0,Washington,Cabernet Franc,Owen Roe
+Italy,90.0,Piedmont,Nebbiolo,Ferrando
+South Africa,16.0,Stellenbosch,Cabernet Sauvignon,Warwick
+Italy,13.0,Northeastern Italy,Pinot Grigio,Mezzacorona
+US,30.0,California,Sparkling Blend,Mirabelle
+US,35.0,California,Merlot,Sextant
+New Zealand,30.0,Hawke's Bay,Chardonnay,Te Awa
+Australia,18.0,South Australia,Shiraz,Sidewood
+France,130.0,Champagne,Champagne Blend,Mailly Grand Cru
+France,25.0,Provence,Ros√©,Ch√¢teau Marg√ºi
+France,90.0,Burgundy,Chardonnay,Albert Bichot
+US,40.0,California,Rh√¥ne-style Red Blend,Workman Ayer
+Portugal,12.0,Douro,Portuguese Red,J. & F. Lurton
+Argentina,17.0,Other,Malbec,Casa Montes
+Portugal,9.0,Estremadura,Fern√£o Pires,DFJ Vinhos
+Italy,20.0,Northeastern Italy,Friulano,Conti Formentini
+US,25.0,Washington,Merlot,Eight Bells
+US,53.0,Washington,Syrah,Dusted Valley
+US,34.0,Washington,Syrah,Efeste
+Italy,30.0,Tuscany,Red Blend,Tenuta di Trecciano
+US,13.0,California,White Blend,St. Francis
+Chile,8.0,Colchagua Valley,Chardonnay,Sombras del Sol
+Argentina,20.0,Mendoza Province,Pinot Noir,Zorzal
+Austria,19.0,Burgenland,Ros√©,Tinhof
+Spain,8.0,Levante,Monastrell,Bodegas la Aldea
+Italy,35.0,Tuscany,Cabernet Sauvignon,Carpineto
+Italy,48.0,Tuscany,Sangiovese,Podere Paganico
+US,11.0,California,Zinfandel,Castle Rock
+Spain,247.0,Northern Spain,Tempranillo,Finca Allende
+Australia,100.0,Victoria,Muscat,Chambers Rosewood Vineyards
+US,21.0,Washington,Chardonnay,Ryan Patrick
+US,18.0,Oregon,Chardonnay,Thistle
+France,30.0,Provence,Provence red blend,Ch√¢teau d'Estoublon
+France,21.0,Burgundy,Chardonnay,Romain Bouchard
+Spain,15.0,Central Spain,Tempranillo,Yemanueva
+US,25.0,Washington,Syrah,L'Ecole No. 41
+US,29.0,California,Red Blend,Eagle Ridge
+US,25.0,California,Rh√¥ne-style Red Blend,Epiphany
+US,15.0,Washington,White Blend,Calendar Girl
+Australia,25.0,Western Australia,Shiraz,Frankland Estate
+US,45.0,California,Cabernet Sauvignon,Stonestreet
+Spain,14.0,Northern Spain,White Blend,Dinast√≠a Vivanco
+US,22.0,California,Sangiovese,Hart
+Argentina,13.0,Mendoza Province,Syrah,Bodegas Escorihuela
+US,18.0,California,Zinfandel,Charles B. Mitchell
+Chile,13.0,Limar√≠ Valley,Viognier,Vi√±a Tabal√≠
+US,18.0,Washington,Ros√©,Hightower
+US,34.0,California,Tempranillo,Alma Sol
+US,75.0,California,Sparkling Blend,Gloria Ferrer
+US,30.0,Washington,Syrah,Helix by Reininger
+France,85.0,Burgundy,Pinot Noir,Joseph Drouhin
+US,50.0,California,Petit Verdot,St. Sup√©ry
+Portugal,8.0,Vinho Verde,Portuguese White,Aveleda
+Italy,7.0,Piedmont,Moscato,Santini
+US,30.0,California,Petite Sirah,San Simeon
+US,29.0,California,Cabernet Sauvignon,Cameron Hughes
+Spain,15.0,Northern Spain,Tempranillo,Covila
+Spain,38.0,Northern Spain,Garnacha,Artadi
+France,50.0,Burgundy,Chardonnay,Ch√¢teau de Beauregard
+US,22.0,Washington,Red Blend,Michael Florentino
+US,50.0,Oregon,Pinot Noir,Maysara
+France,169.0,Bordeaux,Bordeaux-style Red Blend,Ch√¢teau Providence
+Australia,50.0,South Australia,Cabernet Sauvignon,Wakefield
+France,25.0,Alsace,Riesling,Emile Beyer
+South Africa,14.0,Stellenbosch,Chardonnay,Simonsig
+France,15.0,Southwest France,Bordeaux-style Red Blend,Cave du Marmandais
+Spain,15.0,Northern Spain,Menc√≠a,Vinos de Arganza
+US,35.0,California,Chardonnay,Martin Ranch
+France,50.0,Burgundy,Pinot Noir,David Duband
+US,65.0,California,Cabernet Franc,Vincent Vineyards
+US,16.0,California,Chardonnay,Hoopla
+US,14.0,California,Red Blend,Red Rock
+France,10.0,Bordeaux,Bordeaux-style White Blend,Ch√¢teau Grand Secret
+Chile,9.0,Cachapoal Valley,Cabernet Sauvignon,Vi√±a La Rosa
+US,40.0,Washington,Syrah,Waters
+France,75.0,Champagne,Champagne Blend,Deutz
+US,29.0,California,Zinfandel,David Clinton
+France,17.0,Bordeaux,Bordeaux-style Red Blend,Ch√¢teau Baracan
+US,20.0,Oregon,Pinot Noir,Brella
+Portugal,25.0,Douro,Portuguese Red,Casca Wines
+France,19.0,France Other,Malbec,Ch√¢teau de Gaudou
+Argentina,7.0,Other,Malbec,La Riojana Coop
+US,30.0,California,Meritage,Rancho Sisquoc
+US,38.0,Oregon,Pinot Noir,Hawks View
+Spain,30.0,Northern Spain,Tempranillo Blend,Alta Pavina
+Spain,16.0,Catalonia,Sparkling Blend,Juv√© y Camps
+Argentina,14.0,Other,Malbec,Bodega El Transito
+US,26.0,California,Ros√©,Barton
+France,33.0,Alsace,Pinot Gris,Jean-Marc Bernhard
+Argentina,20.0,Mendoza Province,Cabernet Sauvignon,Vi√±a Cobos
+US,15.0,California,Sauvignon Blanc,Ancient Peaks
+Italy,15.0,Tuscany,Red Blend,Castello di Gabbiano
+US,85.0,California,Cabernet Sauvignon,Terra Valentine
+Chile,11.0,Colchagua Valley,Merlot,Caliterra
+France,46.0,Burgundy,Chardonnay,Vincent Sauvestre
+US,14.0,California,Cabernet Sauvignon,Robert Mondavi
+US,50.0,California,Bordeaux-style Red Blend,Medlock Ames
+Australia,55.0,Western Australia,Bordeaux-style Red Blend,Cape Mentelle
+France,90.0,Alsace,Riesling,Andr√© Kientzler
+Portugal,50.0,Tejo,Portuguese White,Falua
+US,50.0,Oregon,Pinot Noir,Ken Wright
+Argentina,10.0,Mendoza Province,Ros√©,Caligiore
+US,45.0,California,Chardonnay,Silverpoint Cellars
+France,50.0,Champagne,Champagne Blend,Dom Caudron
+France,47.0,Burgundy,Pinot Noir,Domaine Jessiaume
+US,44.0,California,Pinot Noir,Joseph Jewell
+US,17.0,California,Chardonnay,Stephen Vincent
+Portugal,80.0,Douro,Portuguese Red,Quinta do Monte Xisto
+US,16.0,Washington,Cabernet Franc,Cloudlift Cellars
+US,12.0,California,Zinfandel,Tortoise Creek
+US,22.0,Oregon,Pinot Noir,Winter's Hill
+US,15.0,California,Ros√©,Wild Thing
+US,24.0,Oregon,Pinot Gris,King Estate
+US,57.0,Washington,Syrah,Betz Family
+France,20.0,Loire Valley,Melon,V√©ronique G√ºnther-Chereau
+France,49.0,Bordeaux,Bordeaux-style Red Blend,Ch√¢teau Gaudin
+US,27.0,California,Merlot,Greenwood Ridge
+US,25.0,California,Syrah,Peju
+France,38.0,Alsace,Pinot Gris,Paul Blanck
+Romania,9.0,Romania,Chardonnay,Cramele Recas
+US,30.0,California,Zinfandel,Hobo
+US,13.0,New York,Sauvignon Blanc,Hazlitt 1852 Vineyards
+US,44.0,Washington,Cabernet Sauvignon,Woodward Canyon
+Spain,34.0,Northern Spain,Tinta de Toro,Cyan
+France,35.0,Loire Valley,Sauvignon Blanc,Henri Bourgeois
+US,16.0,Washington,Pinot Grigio,Locati Cellars
+US,70.0,Washington,Red Blend,Andrew Will
+Spain,25.0,Northern Spain,Menc√≠a,Losada
+Spain,39.0,Spain Other,Red Blend,Valquejigoso
+US,95.0,California,Cabernet Blend,Sodaro
+Italy,70.0,Tuscany,Sangiovese,Mazzei
+US,32.0,California,Petite Sirah,Madrigal
+US,22.0,California,Cabernet Sauvignon,Lodi Estates
+US,25.0,California,Pinot Noir,Sarah's Vineyard
+US,20.0,Washington,Chenin Blanc,W.T. Vintners
+US,42.0,California,Cabernet Sauvignon,Sextant
+Portugal,10.0,Alentejano,Portuguese White,Herdade de S√£o Miguel
+US,30.0,California,Chardonnay,Uptick Vineyards
+France,125.0,Champagne,Chardonnay,Lanson
+Italy,38.0,Piedmont,Nebbiolo,Podere Ruggeri Corsini
+Argentina,19.0,Mendoza Province,Malbec,Terrazas de Los Andes
+Germany,612.0,Rheingau,Riesling,Robert Weil
+South Africa,14.0,Western Cape,Shiraz,Neil Ellis
+US,25.0,California,Pinot Noir,La Crema
+France,16.0,Southwest France,Malbec-Merlot,Ch√¢teau du Port
+France,22.0,Beaujolais,Gamay,Robert Perroud
+Italy,14.0,Tuscany,Red Blend,Vecchia Cantina di Montepulciano
+Italy,25.0,Lombardy,Turbiana,Le Morette
+Argentina,15.0,Other,Torront√©s,Colom√©
+US,42.0,California,Cabernet Sauvignon,Dewitt
+Chile,10.0,Rapel Valley,Sauvignon Blanc,Yali
+Austria,16.0,Nieder√∂sterreich,Gr√ºner Veltliner,Loimer
+Italy,20.0,Central Italy,Trebbiano Spoletino,Perticaia
+US,30.0,California,Cabernet Sauvignon,Cass
+US,24.0,California,Zinfandel,Boeger
+US,40.0,California,Pinot Noir,Michaud
+France,26.0,Loire Valley,Sauvignon Blanc,Domaine Thomas & Fils
+US,45.0,Washington,Cabernet Sauvignon,Patterson
+France,37.0,Rh√¥ne Valley,Rh√¥ne-style Red Blend,√âric & J√∂el Durand
+US,52.0,California,Red Blend,MCV
+France,18.0,Bordeaux,Bordeaux-style Red Blend,Ch√¢teau Landereau
+US,18.0,California,Zinfandel,Easton
+France,14.0,Southwest France,Malbec,Domaine du Grand Cros
+Australia,23.0,Western Australia,Semillon-Sauvignon Blanc,Edwards
+France,55.0,Champagne,Champagne Blend,Philipponnat
+France,145.0,Burgundy,Chardonnay,Morey-Blanc
+US,42.0,California,Zinfandel,Kokomo
+Italy,25.0,Sicily & Sardinia,Nerello Mascalese,Duca di Salaparuta
+Italy,18.0,Tuscany,Vernaccia,Signano
+US,24.0,California,Zinfandel,Matrix
+Chile,25.0,Maule Valley,Red Blend,Casa Donoso
+France,19.0,Provence,Ros√©,Ch√¢teau les Valentines
+US,46.0,California,Chardonnay,Mooney Family
+Italy,45.0,Piedmont,Nebbiolo,Mauro Sebaste
+US,58.0,Oregon,Pinot Noir,Rex Hill
+US,32.0,California,Meritage,Raymond
+US,22.0,Pennsylvania,Pinot Noir,Chaddsford
+Chile,15.0,Curic√≥ Valley,Cabernet Sauvignon,V Norte
+France,15.0,Alsace,Pinot Gris,Cave de Beblenheim
+France,62.0,Loire Valley,Sauvignon Blanc,Domaine Vincent Delaporte
+Italy,52.0,Piedmont,Nebbiolo,Massolino
+Chile,12.0,Colchagua Valley,Chardonnay,Viu Manent
+US,18.0,California,Sauvignon Blanc,Owl Ridge
+US,40.0,Washington,White Riesling,Chateau Ste. Michelle
+Spain,10.0,Levante,Tempranillo Blend,Vicente Gandia
+France,26.0,Burgundy,Chardonnay,Simon Bize
+Hungary,16.0,Tokaji,White Blend,Chateau Dereszla
+Chile,35.0,Colchagua Valley,Cabernet Sauvignon,Fran√ßois Lurton
+Argentina,44.0,Mendoza Province,Malbec,Vi√±a Cobos
+Portugal,50.0,D√£o,Touriga Nacional,Casa Anadia
+Portugal,13.0,Estremadura,Touriga Nacional,Quinta da Romeira
+Spain,16.0,Northern Spain,Garnacha,Bodegas Ateca
+US,35.0,Washington,Syrah,:Nota Bene
+Spain,30.0,Northern Spain,Tempranillo Blend,Telmo Rodr√≠guez
+Spain,31.0,Catalonia,Sparkling Blend,Vins El Cep
+US,25.0,California,Roussanne,Terre Rouge
+US,49.0,California,Syrah,Fess Parker
+US,22.0,Washington,Chardonnay,Swiftwater Cellars
+Italy,85.0,Veneto,Red Blend,Allegrini
+Italy,16.0,Tuscany,Red Blend,Burchino
+France,112.0,Burgundy,Pinot Noir,Domaine Faiveley
+US,8.0,Washington,Merlot,Hogue
+Portugal,6.0,Alentejano,Portuguese Red,Cooperativa Reguengos de Monsaraz
+France,85.0,Rh√¥ne Valley,Syrah,Jean-Luc Colombo
+Italy,87.0,Veneto,Corvina,Allegrini
+US,25.0,Oregon,Riesling,Hyland
+US,22.0,California,Zinfandel,Pezzi King
+US,28.0,Oregon,Pinot Noir,Child's Play
+Portugal,30.0,Bairrada,Verdelho,Campolargo
+Spain,33.0,Catalonia,Red Blend,Cellers Uni√≥
+France,20.0,Bordeaux,Bordeaux-style Red Blend,Ch√¢teau Brethous
+South Africa,14.0,Paardeberg,Sauvignon Blanc,Vondeling
+Portugal,27.0,Douro,Portuguese Red,Caves Transmontanas
+Chile,18.0,Casablanca Valley,Chardonnay,Indomita
+Portugal,19.0,Douro,Portuguese Red,Conceito Vinhos
+Australia,35.0,Western Australia,Sauvignon Blanc-Semillon,Cullen
+US,18.0,Washington,Ros√©,Waters
+France,75.0,Languedoc-Roussillon,Rh√¥ne-style White Blend,Terrassous
+France,105.0,Champagne,Champagne Blend,Lanson
+France,19.0,Provence,Ros√©,Commanderie de la Bargemone
+US,22.0,California,Pinot Noir,Fiddlehead
+France,40.0,Alsace,Riesling,Domaine Barm√®s-Buecher
+France,50.0,Champagne,Champagne Blend,Billecart-Salmon
+Portugal,12.0,Bairrada,Portuguese Red,Adega de Cantanhede
+France,9.0,Bordeaux,Bordeaux-style Red Blend,Ch√¢teau Henry de France
+France,30.0,Burgundy,Pinot Noir,Domaine Jean Monnier et Fils
+France,40.0,Burgundy,Chardonnay,Domaine Jessiaume
+France,26.0,Burgundy,Sparkling Blend,Cave de Bissey
+US,39.0,California,Cabernet Sauvignon,Doren
+US,26.0,Washington,Red Blend,SuLei
+Argentina,34.0,Mendoza Province,Bonarda,Nieto Senetiner
+France,15.0,Beaujolais,Gamay,Domaine Dupr√©
+US,12.0,California,Sauvignon Blanc,Cable Car
+Italy,30.0,Southern Italy,Red Blend,Rivera
+France,12.0,Rh√¥ne Valley,Rh√¥ne-style Red Blend,Ch√¢teau de Farel
+US,28.0,California,Albari√±o,Artesa
+Chile,13.0,Colchagua Valley,Carmen√®re,Ventisquero
+US,14.0,Washington,Merlot,Roza Ridge
+US,45.0,California,Pinot Noir,Rodney Strong
+Austria,13.0,Kremstal,Gr√ºner Veltliner,Forstreiter
+Argentina,135.0,Mendoza Province,Red Blend,Bodega Catena Zapata
+Portugal,12.0,Vinho Verde,Portuguese White,Solar de Pinheiro
+Spain,45.0,Northern Spain,Red Blend,Remelluri
+France,225.0,Burgundy,Pinot Noir,Ch√¢teau de la Tour
+France,15.0,Bordeaux,Bordeaux-style Red Blend,Ch√¢teau de Go√´lane
+Argentina,10.0,Mendoza Province,Malbec,Valentin Bianchi
+US,80.0,California,Cabernet Sauvignon,Lobo
+US,25.0,California,Pinot Noir,Sextant
+US,15.0,California,Chardonnay,Toad Hollow
+US,22.0,California,Chardonnay,Joseph Carr
+France,53.0,Alsace,Riesling,Domaine Schoffit
+Italy,25.0,Tuscany,Sangiovese,Eredi Enzo Raspi
+Austria,20.0,Burgenland,Blaufr√§nkisch,Judith Beck
+France,124.0,Champagne,Chardonnay,Jean Milan
+Australia,40.0,South Australia,G-S-M,John Duval Wines
+US,55.0,Oregon,Pinot Noir,Torii Mor
+US,36.0,California,Zinfandel,Sbragia
+US,23.0,California,Chardonnay,Cru
+Germany,175.0,Mosel,Riesling,S.A. Pr√ºm
+US,58.0,California,Chardonnay,Ch.igai Takaha
+France,15.0,Rh√¥ne Valley,Rh√¥ne-style Red Blend,Bieler P√®re et Fils
+Italy,44.0,Lombardy,Sparkling Blend,Bellavista
+France,304.0,Burgundy,Pinot Noir,Domaine Dujac
+Argentina,9.0,Mendoza Province,Malbec,Filus
+France,16.0,France Other,Cabernet Sauvignon,Florent Descombe
+France,19.0,Bordeaux,Bordeaux-style Red Blend,Barton & Guestier
+France,28.0,Loire Valley,Pinot Noir,Vignobles Berthier
+US,12.0,California,Chenin Blanc,Dry Creek Vineyard
+Italy,30.0,Tuscany,Syrah,Stefania Mezzetti
+US,19.0,California,Cabernet Sauvignon,Casto Oaks
+Bulgaria,23.0,Danube River Plains,Chardonnay,Chateau Burgozone
+US,60.0,Oregon,Pinot Noir,Bryn Mawr Vineyards
+Chile,14.0,Maule Valley,Carmen√®re,Leyendas de Familia
+Italy,96.0,Tuscany,Sangiovese,Il Marroneto
+France,80.0,Bordeaux,Merlot,Ch√¢teau Barde Haut
+Greece,17.0,Nemea,Agiorgitiko,Greek Wine Cellars
+US,26.0,Washington,Bordeaux-style Red Blend,Drink Washington State
+France,40.0,Bordeaux,Bordeaux-style Red Blend,Ch√¢teau Montrose
+France,26.0,Southwest France,Red Blend,Ch√¢teau Bouissel
+France,50.0,Burgundy,Pinot Noir,Manuel Olivier
+Portugal,18.0,Tejo,Touriga Nacional,Quinta da Lapa
+France,27.0,Alsace,Pinot Gris,Jean-Baptiste Adam
+Italy,65.0,Piedmont,Nebbiolo,Sordo
+France,16.0,Languedoc-Roussillon,Ros√©,Vignobles Jeanjean
+France,25.0,Loire Valley,Sauvignon Blanc,Jean-Michel Sorbe
+Spain,16.0,Galicia,Menc√≠a,Regina Viarum
+France,30.0,Burgundy,Chardonnay,Jacques Charlet
+France,25.0,Southwest France,Malbec,Ch√¢teau Saint-Didier-Parnac
+France,45.0,Alsace,Riesling,Domaine Weinbach
+France,20.0,Bordeaux,Ros√©,Ch√¢teau C√¥te Montpezat
+France,15.0,Southwest France,Sauvignon Blanc,Domaine de l'Herr√©
+Spain,100.0,Northern Spain,Tempranillo,Abadia Retuerta
+US,45.0,California,Chardonnay,Acacia
+Italy,115.0,Veneto,Red Blend,Cesari
+France,30.0,Bordeaux,Bordeaux-style Red Blend,Ch√¢teau de Lagarde
+Chile,95.0,Aconcagua Valley,Red Blend,Errazuriz
+Chile,22.0,Leyda Valley,Sauvignon Blanc,O. Fournier
+Italy,19.0,Sicily & Sardinia,Grillo,Tonnino
+US,45.0,Oregon,Pinot Noir,Carabella
+US,72.0,California,Chardonnay,Testarossa
+Spain,40.0,Catalonia,Red Blend,Mas d'en Gil
+Italy,12.0,Tuscany,Red Blend,Vignemastre
+Germany,24.0,Franken,Silvaner,Castell
+Spain,18.0,Levante,Red Blend,Hacienda del Carche
+Chile,22.0,San Antonio,Sauvignon Blanc,Undurraga
+Argentina,8.0,Mendoza Province,Malbec,Pampa
+France,375.0,Bordeaux,Bordeaux-style Red Blend,Ch√¢teau B√©lair-Monange
+South Africa,25.0,Stellenbosch,Chardonnay,Thelema
+Argentina,9.0,Mendoza Province,Malbec,Bodega Privada
+Austria,21.0,Weinviertel,Gr√ºner Veltliner,R&A; Pfaffl
+Italy,30.0,Northeastern Italy,Sauvignon,Alois Lageder
+Argentina,17.0,Other,Pinot Noir,Denario
+Portugal,40.0,Douro,Portuguese Red,Bernard Magrez
+US,24.0,California,Sauvignon Blanc,Byington
+France,20.0,Bordeaux,Bordeaux-style Red Blend,Ch√¢teau Hourtin-Ducasse
+US,48.0,Washington,Bordeaux-style Red Blend,Sparkman
+Italy,15.0,Piedmont,Dolcetto,Collina San Ponzio
+Italy,15.0,Tuscany,Vernaccia,Tenuta La Vigna
+US,12.0,New York,Ros√©,Sheldrake Point
+US,13.0,California,Sauvignon Blanc,Scratchpad
+US,36.0,California,Cabernet Sauvignon,Beringer
+Italy,35.0,Piedmont,Barbera,Vite Colte
+Israel,17.0,Galilee,Shiraz,Or Haganuz
+Italy,14.0,Northeastern Italy,White Blend,Tenuta di Angoris
+Italy,47.0,Lombardy,Sparkling Blend,Ricci Curbastro
+US,58.0,Washington,Cabernet Sauvignon,Mark Ryan
+France,28.0,Burgundy,Chardonnay,Domaine Feuillat-Juillot
+US,38.0,Washington,Carmen√®re,Martinez & Martinez
+Argentina,65.0,Mendoza Province,Red Blend,Lagarde
+Spain,9.0,Levante,Monastrell,Wrongo Dongo
+Portugal,28.0,Tejo,Gew√ºrztraminer-Riesling,Quinta da Lagoalva de Cima
+US,16.0,California,Red Blend,Michael David
+France,60.0,Burgundy,Chardonnay,Domaine de Bellene
+Argentina,16.0,Mendoza Province,Malbec,Domaine Bousquet
+South Africa,17.0,Western Cape,Sauvignon Blanc,Tokara
+US,45.0,Washington,Cabernet Sauvignon,Auclair
+US,28.0,California,Rh√¥ne-style Red Blend,Ventana
+Italy,50.0,Tuscany,Sangiovese,Renieri
+France,18.0,Provence,Provence white blend,Ch√¢teau d'Olli√®res
+US,85.0,California,Syrah-Cabernet Sauvignon,Daou
+France,20.0,France Other,Vermentino,Union de Vignerons de l'√éle de Beaut√©
+US,42.0,California,Syrah,Baker Lane
+US,14.0,Oregon,Chardonnay,Wine by Joe
+Portugal,14.0,Bucelas,Arinto,Quinta da Romeira
+US,16.0,Washington,Chardonnay,Hogue
+Spain,11.0,Central Spain,White Blend,Paso a Paso
+US,28.0,Oregon,Chardonnay,Argyle
+US,65.0,Washington,Bordeaux-style Red Blend,Pepper Bridge
+France,38.0,Burgundy,Chardonnay,Georges Duboeuf
+Portugal,13.0,Vinho Verde,Portuguese White,Quintas de Melga√ßo
+Chile,30.0,San Antonio,Syrah,Lapostolle
+France,17.0,Bordeaux,Bordeaux-style Red Blend,Ch√¢teau des Demoiselles
+Chile,26.0,Limar√≠ Valley,Pinot Noir,Concha y Toro
+US,25.0,California,Sparkling Blend,Laetitia
+Argentina,19.0,Mendoza Province,Malbec,Altocedro
+Chile,13.0,Limar√≠ Valley,Muscat,Los Molles
+France,41.0,Beaujolais,Gamay,Domaine de Colonat
+Argentina,15.0,Other,Pinot Noir,Manos Negras
+US,60.0,California,Bordeaux-style Red Blend,Charles Krug
+France,30.0,Bordeaux,Bordeaux-style Red Blend,Chateau La Tour Carnet
+Spain,45.0,Northern Spain,Tinta de Toro,Vatan
+US,30.0,California,Cabernet Franc,Ferriere Vineyards
+US,25.0,Oregon,Pinot Noir,Chehalem
+Italy,25.0,Central Italy,Red Blend,Perticaia
+Portugal,25.0,Douro,Portuguese Red,Calheiros Cruz
+France,20.0,Bordeaux,Bordeaux-style Red Blend,Ch√¢teau Langlet
+US,41.0,Washington,Bordeaux-style Red Blend,Baer
+US,32.0,California,Sauvignon Blanc,Matanzas Creek
+Austria,29.0,Burgenland,Red Blend,Hillinger
+Italy,25.0,Central Italy,White Blend,Palazzone
+US,27.0,Washington,Tempranillo,Castillo De Feliciana
+US,26.0,California,Zinfandel,Earthquake
+Austria,22.0,S√ºdsteiermark,Pinot Gris,Wohlmuth
+France,18.0,Southwest France,Gros Manseng,Lapeyre
+Spain,90.0,Central Spain,Cabernet Blend,Marques de Gri√±on
+France,100.0,Champagne,Chardonnay,Mailly Grand Cru
+Spain,29.0,Northern Spain,Cabernet Sauvignon,Asensio
+US,13.0,Oregon,Pinot Gris,Illahe
+Portugal,13.0,Tejo,Fern√£o Pires,Quinta do Casal Branco
+US,15.0,Washington,Riesling,Scarborough
+Spain,20.0,Central Spain,Red Blend,Marques de Gri√±on
+US,8.0,Washington,Riesling,Pine & Post
+US,54.0,Washington,Cabernet Sauvignon,Adams Bench
+US,80.0,Washington,Syrah,Charles Smith
+Portugal,13.0,Douro,Portuguese Red,Vinihold
+France,75.0,Champagne,Champagne Blend,Jeaunaux-Robin
+Australia,25.0,South Australia,Shiraz,Sieber Rd
+Chile,11.0,Maule Valley,Chardonnay,Gr√øphus
+Austria,19.0,Wachau,Ros√©,J√§ger
+Spain,10.0,Levante,Monastrell,Finca Hispana
+Spain,95.0,Catalonia,White Blend,Marco Abella
+US,58.0,California,Chardonnay,Chateau Montelena
+US,180.0,California,Cabernet Sauvignon,Far Niente
+Brazil,23.0,Brazil,Champagne Blend,Casa Valduga
+Australia,16.0,Victoria,Shiraz,Mount Langi Ghiran
+US,35.0,Washington,Mourv√®dre,Ardor
+US,42.0,California,Syrah,Donkey & Goat
+US,10.0,Washington,Sauvignon Blanc,Arbor Crest
+US,65.0,Washington,Tempranillo-Cabernet Sauvignon,K Vintners
+Greece,15.0,Mantinia,Moschofilero,Nasiakos
+Portugal,30.0,Lisboa,Portuguese Red,Companhia das Quintas
+France,18.0,Bordeaux,Bordeaux-style Red Blend,Ch√¢teau Bourdieu
+US,32.0,Washington,Cabernet Franc,Dumas Station
+US,30.0,California,Cabernet Sauvignon,Yardstick
+France,24.0,Bordeaux,Bordeaux-style Red Blend,Ch√¢teau Castera
+US,13.0,California,Chardonnay,Vinum
+Germany,20.0,Pfalz,Riesling,A. Christmann
+Austria,24.0,Nieder√∂sterreich,Gr√ºner Veltliner,Pratsch
+US,27.0,California,Red Blend,Naggiar
+US,23.0,California,Pinot Noir,Chesebro
+Italy,40.0,Southern Italy,Primitivo,Jorche
+Turkey,34.0,Aegean,Bordeaux-style Red Blend,Urla
+US,11.0,Washington,Riesling,Pacific Rim
+US,19.0,California,Gew√ºrztraminer,Borra
+France,13.0,France Other,Sparkling Blend,Bouvet-Ladubay
+Italy,18.0,Central Italy,Red Blend,Decugnano dei Barbi
+US,30.0,Oregon,Pinot Noir,Amalie Robert
+Chile,50.0,Maipo Valley,Red Blend,TerraMater
+US,42.0,California,Grenache,Crux
+US,30.0,California,Chardonnay,Truchard
+Greece,22.0,Cephalonia,Robola,Gentilini
+US,35.0,California,Zinfandel,Rosenblum
+France,16.0,Burgundy,Chardonnay,Simonnet-Febvre
+US,28.0,Washington,Chardonnay,Sleight of Hand
+US,20.0,Washington,Merlot,Cascade Ridge
+France,15.0,Languedoc-Roussillon,Chardonnay,Calmel & Joseph
+US,19.0,California,Chardonnay,Alma Rosa
+France,28.0,Beaujolais,Gamay,Richard Rottiers
+US,32.0,California,Viognier,Alysian
