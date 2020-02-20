@@ -1,4 +1,4 @@
-from wr_cli.resources import ResourceQuery as Q
+from resources import ResourceQuery as Q
 
 import csv
 import sqlite3
