@@ -1,6 +1,6 @@
 import unittest
 
-from wr_cli.parser import Parser, ParserError
+from wr_cli.wrparser import Parser, ParserError
 
 
 class TestParser(unittest.TestCase):

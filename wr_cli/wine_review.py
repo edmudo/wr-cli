@@ -5,7 +5,7 @@ import cmd
 import os
 import sys
 
-from parser import Parser, ParserError
+from wrparser import Parser, ParserError
 from database import Database, DatabaseError
 
 

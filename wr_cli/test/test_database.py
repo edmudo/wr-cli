@@ -4,12 +4,15 @@ from wr_cli.database import Database
 
 
 class TestDatabase(unittest.TestCase):
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.database = Database(schema_path='wr_cli/schema.txt',
-                                 db_path='wr_cli/wine.db',
-                                 data_path='wr_cli/data')
+    def setUp(self):
+        self.database = Database(data_dir='wr_cli/data',
+                                 db_path='wine.db',
+                                 schema_path='wr_cli/schema.txt')
         self.database.load_data()
+
+    def test_nocolumn(self):
+        self.assertRaises(ValueError, self.database.do_query,
+                          kw=dict(_keyword='review', no_column='test'))
 
     def test_doquery(self):
         # test cases take a tuple(dict, int) where int is the expected number
@@ -19,11 +22,11 @@ class TestDatabase(unittest.TestCase):
                  (dict(_keyword='review', points=89), -1),
                  (dict(_keyword='review', variety='Red Blend'), -1),
                  (dict(_keyword='reviewer', taster_name='Jim Gordon'), -1),
-                 (dict(_keyword='review', no_column='test'), 0)
                  ]
 
         for (case, length) in cases:
             results = self.database.do_query(case)
+
             self.assertIsNotNone(results,
                                  msg=f'Results returned None on case `{case}`')
 
